@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/chat_message_record_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018年08sdfsd"/>
+
+    <RelativeLayout
+        android:id="@+id/chat_message_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_message_record_time"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+
+         <ImageView
+             android:id="@+id/chat_message_record_avatar"
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:src="@drawable/ydsp"/>
+        <TextView
+            android:id="@+id/chat_message_record_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/chat_message_record_avatar"
+            android:layout_marginStart="5dp"
+            android:layout_centerVertical="true"
+            android:textSize="13sp"
+            android:text="张三  12：59：59"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_message_name_layout"
+        android:layout_marginStart="40dp">
+        <ImageView
+            android:id="@+id/chat_message_record_file_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/pdf"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/chat_message_record_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_toEndOf="@+id/chat_message_record_file_image"
+            android:layout_marginStart="5dp"
+            android:text="sdfsdfsdfsdf"/>
+
+        <ImageView
+            android:id="@+id/chat_message_record_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

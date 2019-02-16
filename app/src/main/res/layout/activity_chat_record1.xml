@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addressList.chat.chatRecord.ChatRecord">
+    <RelativeLayout
+        android:id="@+id/chat_record_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/chat_record_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:layout_marginEnd="12dp"
+            android:textSize="16sp"
+            android:textColor="@color/green_edit"
+            android:layout_alignParentEnd="true"/>
+        <com.sinostar.assistant.widget.ClearableEditText
+            android:id="@+id/chat_record_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入关键字查找"
+            android:layout_toStartOf="@+id/chat_record_cancle"
+            android:background="@drawable/chat_eidt"
+            android:textColorHint="@color/edit_stroke"
+            android:drawableLeft="@drawable/ic_search_grey_500_18dp"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="12dp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/chat_record_text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_record_title_bar"
+        android:background="@color/white"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="快速搜索聊天记录"
+            android:textColor="@color/edit_stroke"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="15sp"
+            android:padding="8dp"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/chat_record_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/chat_record_text_layout"
+        android:background="@color/white"
+        android:layout_marginTop="2dp"
+        >
+
+    </ListView>
+
+</RelativeLayout>

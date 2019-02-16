@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/approve_agree_model_layout"
+    tools:context=".ui.mobile.agree.ApproveAgree">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        app:srlEnablePureScrollMode="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.sinostar.assistant.widget.MyListView
+                    android:id="@+id/approve_agree_model_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:clickable="false"
+                    android:listSelector="@android:color/transparent"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/approve_agree_model_button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/approve_agree_model_list"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    >
+                    <Button
+                        android:id="@+id/approve_pass_model_confirm_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="确定"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/blue_button_shape"/>
+
+                    <Button
+                        android:id="@+id/approve_pass_model_cancel_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/approve_pass_model_confirm_button"
+                        android:background="@drawable/grey_button_shape"
+                        android:text="取消"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+
+
+
+
+    <include
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

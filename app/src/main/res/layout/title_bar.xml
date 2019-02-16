@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="@color/homeTitleBar"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+  >
+
+
+<RelativeLayout
+    android:id="@+id/title_bar_back_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true">
+        <ImageButton
+            android:id="@+id/title_bar_back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:focusableInTouchMode="true"
+            app:srcCompat="@drawable/back" />
+
+
+        <TextView
+            android:id="@+id/title_bar_back_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/title_bar_back_image"
+            android:gravity="center"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+</RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/title_bar_rightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:padding="8dp"
+            android:layout_marginRight="12dp"
+            android:text=""
+            />
+
+        <ImageView
+            android:id="@+id/title_bar_right_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            />
+
+
+</RelativeLayout>

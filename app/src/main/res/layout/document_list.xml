@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:id="@+id/layout11"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+
+
+   >
+    <ImageView
+        android:id="@+id/approve_list_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:id="@+id/approve_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+       android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_toEndOf="@+id/approve_list_image"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="TextView" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/background"
+        android:layout_below="@+id/approve_list_title"/>
+</RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/approve_list_major_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/layout11">
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        app:srcCompat="@drawable/circle_purple" />
+
+    <TextView
+        android:id="@+id/approve_list_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView9"
+        android:layout_marginStart="5dp"
+        android:padding="5dp"
+
+        android:layout_toStartOf="@+id/approve_list_button"
+        android:layout_alignBaseline="@+id/imageView9"
+        android:text="TextView" />
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/approve_list_name"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        app:srcCompat="@drawable/circle_blue" />
+
+    <TextView
+        android:id="@+id/approve_list_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView10"
+        android:layout_below="@+id/approve_list_name"
+        android:layout_marginStart="5dp"
+        android:layout_toStartOf="@+id/approve_list_button"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/imageView10"
+        android:text="TextView" />
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/approve_list_person"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        app:srcCompat="@drawable/circle_yellow" />
+    <TextView
+        android:id="@+id/approve_list_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageView11"
+        android:layout_below="@+id/approve_list_person"
+        android:layout_toStartOf="@+id/approve_list_button"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/imageView11"
+        android:layout_marginStart="5dp"
+        android:text="TextView"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:id="@+id/approve_list_button"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:text="审批"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/approve_button_text"
+        android:background="@drawable/approve_button"
+        android:visibility="gone"
+
+        />
+
+</RelativeLayout>
+
+
+
+
+</RelativeLayout>

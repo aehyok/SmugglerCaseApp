@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/data_query_layout"
+    tools:context=".ui.query.DataQuery">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        app:srlEnablePureScrollMode="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/data_query_radio_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <RadioGroup
+                        android:id="@+id/data_query_raidoGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioButton_person"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="个人" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton_company"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="单位" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/data_query_fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/data_query_radio_layout">
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+</RelativeLayout>

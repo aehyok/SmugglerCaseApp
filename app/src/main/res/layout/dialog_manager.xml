@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/chat_voice_backgroud"
+    >
+
+    <RelativeLayout
+        android:id="@+id/chat_voice_dialog_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/dialog_icon"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chat_voice1"
+
+           />
+
+        <ImageView
+            android:id="@+id/dialog_voice"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/v6"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitEnd"
+            android:layout_toEndOf="@+id/dialog_icon"
+
+
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/recorder_dialogtext"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/chat_voice_dialog_layout"
+        android:text="@string/chat_moveUp"
+        android:textColor="#ffffffff" />
+
+</RelativeLayout>

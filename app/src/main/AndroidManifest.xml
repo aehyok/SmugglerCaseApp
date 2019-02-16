@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sinostar.assistant">
+
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 用于打开相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 用于打开震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 修改音量 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- 小米推送 -->
+    <permission
+        android:name="com.sinostar.assistant.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.sinostar.assistant.permission.MIPUSH_RECEIVE" />
+
+    <application
+        android:name=".base.ApplicationUtil"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon"
+        tools:targetApi="honeycomb_mr2">
+
+        <!-- 文件支持 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+
+        <!-- 华为推送 -->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=100604221" />
+
+        <!--
+             接入HMSSDK PUSH模块需要注册，第三方相关 :接收Push消息（注册、Push消息、Push连接状态）广播，
+                此receiver类需要开发者自己创建并继承com.huawei.hms.support.api.push.PushReceiver类，
+                参考示例代码中的类：com.sinostar.assistant.receiver.HMSPushReceiver
+        -->
+
+        <receiver android:name=".receiver.HMSPushReceiver">
+            <intent-filter>
+
+                <!-- 必须,用于接收token | Must， for receiving token -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- 必须，用于接收消息 | Must， used to receive messages -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 | Optional, click the button on the notification bar or the notification bar to trigger the onevent callback -->
+                <action android:name="com.huawei.android.push.intent.CLICK" />
+                <!-- 可选，查看push通道是否连接，不查看则不需要 | Optional, query whether the push channel is connected or not -->
+                <action android:name="com.huawei.intent.action.PUSH_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 小米推送相关配置 -->
+        <service
+            android:name="com.xiaomi.push.service.XMJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":pushservice" />
+        <service
+            android:name="com.xiaomi.push.service.XMPushService"
+            android:enabled="true"
+            android:process=":pushservice" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
+
+        <!-- 推送消息广播接收器 -->
+        <receiver
+            android:name=".receiver.MIUIMessageReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xiaomi.push.service.receivers.PingReceiver"
+            android:exported="false"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER" />
+            </intent-filter>
+        </receiver>
+        <!-- 小米推送配置 end -->
+
+
+        <!-- 开机自启动服务 -->
+        <receiver android:name=".receiver.StartServiceReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1110190123085855#assistant" />
+
+        <!-- 声明SDK所需的service SDK核心功能 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".utils.NotificationBroadcastReceiver" />
+
+        <!-- 讯飞语音输入 -->
+        <meta-data
+            android:name="IFLYTEK_APPKEY"
+            android:value="5c47e298" />
+
+        <!-- 高德地图 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="49427ac9ea3f6a9a9b5edb9eb01fb4b4" />
+
+        <!-- 百度地图 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="6WjYl84ErBcuMUD81fwHXdtRa5sV13zG" />
+
+        <!-- 引导页 -->
+        <activity
+            android:name=".ui.GuideActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 父Activity -->
+        <activity
+            android:name=".base.BaseActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 登录页 -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 主页 -->
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 移动审批主页面 -->
+        <activity
+            android:name=".ui.mobile.MobileApproveActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 待审批详情 -->
+        <activity
+            android:name=".ui.mobile.info.ApproveInfo"
+            android:screenOrientation="portrait" />
+
+        <!-- pdf详情 -->
+        <activity
+            android:name=".ui.mobile.info.DocumentInfo"
+            android:screenOrientation="portrait" />
+
+        <!-- 办案助手主页面 -->
+        <activity
+            android:name=".ui.cassAssistant.CaseAssistantActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 地图查看 -->
+        <activity
+            android:name=".ui.cassAssistant.announce.link.MapActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 呈请报告模版 -->
+        <activity
+            android:name=".ui.cassAssistant.announce.link.ReportDemo"
+            android:screenOrientation="portrait" />
+
+        <!-- 审批页面 -->
+        <activity
+            android:name=".ui.mobile.agree.ApproveAgree"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 数据查询 -->
+        <activity
+            android:name=".ui.query.DataQuery"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 现场取证 -->
+        <activity
+            android:name=".ui.research.ObtainEvidence"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 现场取证证据上传（照片上传） -->
+        <activity
+            android:name=".ui.research.image.ImageSelect"
+            android:screenOrientation="portrait" />
+
+        <!-- 图片查看 -->
+        <activity
+            android:name=".ui.image.ImageCheck"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent" />
+
+        <!-- 办案助手-案件详情 -->
+        <activity
+            android:name=".ui.cassAssistant.announce.link.CaseOfLInk"
+            android:screenOrientation="portrait" />
+
+        <!-- 通讯录主页面 -->
+        <activity
+            android:name=".ui.addressList.AdressList"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateHidden" />
+
+        <!-- 聊天界面 -->
+        <activity
+            android:name=".ui.addressList.chat.Chat"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- 聊天地图 -->
+        <activity
+            android:name=".ui.addressList.chat.chatMap.ChatMap"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+        <activity android:name=".ui.addressList.chat.video.ChatVideo" />
+
+        <!-- 聊天图片查看 -->
+        <activity
+            android:name=".ui.addressList.chat.video.ChatImageCheck"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent" />
+        <!-- 聊天详情页 -->
+        <activity
+            android:name=".ui.addressList.chat.ChatInfo"
+            android:screenOrientation="portrait" />
+
+        <!-- 登陆环信页面 -->
+        <activity
+            android:name=".ui.addressList.ChatLogin"
+            android:screenOrientation="portrait" />
+
+        <!-- 聊天消息转发 -->
+        <activity
+            android:name=".ui.addressList.chat.Transmit"
+            android:screenOrientation="portrait" />
+
+        <!-- 聊天记录页面 -->
+        <activity
+            android:name=".ui.addressList.chat.chatRecord.ChatRecord"
+            android:screenOrientation="portrait" />
+
+        <!-- 聊天记录-按时间查找 -->
+        <activity
+            android:name=".ui.addressList.chat.chatRecord.ChatRecordDate"
+            android:screenOrientation="portrait" />
+        <!-- 创建群组 -->
+        <activity
+            android:name=".ui.addressList.chatRoom.create.CreateChatRoom"
+            android:screenOrientation="portrait" />
+
+        <!-- 全局dialog弹窗 -->
+        <activity
+            android:name=".ui.DialogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/translucent" />
+        <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomInfoActivity" />
+        <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomEditActivity" />
+        <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomCodeActivity"></activity>
+    </application>
+
+</manifest>

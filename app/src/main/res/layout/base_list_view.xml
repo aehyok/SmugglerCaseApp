@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include
+        android:id="@+id/other_layout"
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/other_layout"
+        app:srlEnableOverScrollDrag="true"
+        >
+        <ListView
+            android:id="@+id/base_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:divider="@color/background"
+            android:dividerHeight="8dp"
+
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</RelativeLayout>

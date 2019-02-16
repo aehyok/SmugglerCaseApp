@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addressList.chat.ChatInfo">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        app:srlEnablePureScrollMode="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:paddingTop="8dp"
+                    android:paddingBottom="15dp"
+                    android:background="@color/white"
+                    >
+
+                    <ImageView
+                        android:id="@+id/chat_info_avatar"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:padding="12dp"
+                        android:scaleType="centerCrop"
+                        />
+                    <TextView
+                        android:id="@+id/chat_info_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chat_info_avatar"
+                        android:layout_alignStart="@+id/chat_info_avatar"
+                        android:layout_alignEnd="@+id/chat_info_avatar"
+                        android:gravity="center"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textColor="@color/grey"
+                        android:textSize="13sp"
+                        android:text=""/>
+                    <ImageView
+                        android:id="@+id/chat_info_add_bt"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/group_add"
+                        android:layout_toEndOf="@+id/chat_info_avatar"
+                        android:padding="12sp"
+                        />
+                </RelativeLayout>
+                <include
+                    android:id="@+id/layout3"
+                    layout="@layout/chat_info_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout"
+                    />
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</RelativeLayout>

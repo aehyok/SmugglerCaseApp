@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addressList.chat.chatMap.ChatMap">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/chat_map_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        android:padding="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:hint="搜索地点"
+        android:gravity="center"
+        android:cursorVisible="false"
+        android:background="@drawable/chat_map_search_shape"
+        />
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/chat_map_mapview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/chat_map_search"
+        >
+        <ImageView
+            android:id="@+id/chat_map_anchor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chat_map_anchors"
+            />
+    </com.amap.api.maps.MapView>
+
+
+    <ImageView
+        android:id="@+id/chat_map_location_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_my_location_green_500_36dp"
+        android:layout_above="@+id/chat_map_refreshLayout"
+        android:layout_alignParentEnd="true"
+        android:background="@color/white"
+        android:padding="5dp"
+       android:layout_margin="12dp"/>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/chat_map_refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_map_mapview"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+        <ListView
+            android:id="@+id/chat_map_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+          >
+        </ListView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</RelativeLayout>

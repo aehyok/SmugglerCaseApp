@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/chat_to_loading_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/chat_to_message_content_layout"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_file_upload_blue_500_36dp"
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".caseAssistant.announce.Case.CaseInfoActivity">
+
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/case_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar">
+        <TextView
+            android:id="@+id/case_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:text="编号：132456" />
+
+        <TextView
+            android:id="@+id/case_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/case_num"
+            android:layout_alignStart="@+id/case_num"
+            android:layout_marginTop="8dp"
+            android:text="名称：广东省某某公司走私事件" />
+        <TextView
+            android:id="@+id/case_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/case_name"
+            android:layout_alignStart="@+id/case_num"
+            android:layout_marginTop="8dp"
+            android:text="状态：案件受理" />
+
+        <TextView
+            android:id="@+id/case_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/case_state"
+            android:layout_alignStart="@+id/case_num"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="日期：2018年6月23日" />
+
+        <TextView
+            android:id="@+id/case_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/case_time"
+            android:layout_toLeftOf="@+id/case_more_image"
+            android:text="更多" />
+
+        <ImageView
+            android:id="@+id/case_more_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/case_time"
+            android:layout_alignBottom="@+id/case_time"
+            app:srcCompat="@drawable/right"
+            android:layout_marginRight="12dp"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/case_info_layout"
+        android:background="@drawable/corner_0dp">
+
+        <LinearLayout
+            android:id="@+id/case_info_click_layout"
+            android:layout_width="70dp"
+
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+
+            <Button
+                android:id="@+id/case_info_click1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/case_info_click_shape"
+                android:gravity="center"
+                android:text="线索\n移交" />
+
+            <Button
+                android:id="@+id/case_info_click2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/case_info_click_shape"
+                android:gravity="center"
+                android:text="案件\n登记" />
+
+            <Button
+                android:id="@+id/case_info_click3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/case_info_click_shape"
+
+                android:gravity="center"
+                android:text="案件\n受理" />
+
+            <Button
+                android:id="@+id/case_info_click4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/case_info_click_shape"
+                android:gravity="center"
+                android:text="调查\n取证" />
+
+            <Button
+                android:id="@+id/case_info_click5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/case_info_click_shape"
+                android:gravity="center"
+                android:text="案件\n审理" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/case_info_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/case_info_click_layout"
+            android:layout_margin="5dp"
+
+
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

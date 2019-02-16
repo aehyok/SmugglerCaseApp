@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addressList.chat.video.VideoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.sinostar.assistant.widget.DragPhotoView
+        android:id="@+id/video_photoview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:visibility="gone">
+    </com.sinostar.assistant.widget.DragPhotoView>
+
+
+
+       <com.sinostar.assistant.widget.DragImageView
+           android:id="@+id/video_image"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:scaleType="fitCenter"
+           android:visibility="gone"/>
+       <ImageView
+           android:id="@+id/video_star_button"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:src="@drawable/ic_play_circle_outline_white_48dp"
+
+           />
+
+
+    <com.sinostar.assistant.widget.DragVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <com.sinostar.assistant.widget.LodingCircleView
+        android:id="@+id/video_loading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <com.sinostar.assistant.widget.DragVideoSurface
+        android:id="@+id/video_texture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+
+
+</RelativeLayout>

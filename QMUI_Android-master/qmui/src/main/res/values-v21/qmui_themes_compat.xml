@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppConfigTheme.Compat" parent="AppBaseTheme.Compat" >
+        <item name="android:navigationBarColor">?attr/qmui_config_color_black</item>
+        <!-- 该行会影响顶部条收起时效果,为false时，状态栏颜色不会被改变 -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="Button.Compat" parent="ButtonBase.Compat">
+        <!-- 去掉5.0下Button点击的阴影动画效果 -->
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

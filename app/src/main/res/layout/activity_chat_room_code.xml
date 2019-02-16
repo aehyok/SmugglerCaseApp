@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomCodeActivity">
+
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="70dp"
+        android:paddingStart="35dp"
+        android:paddingEnd="35dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="50dp"
+        app:qmui_radius="5dp"
+        app:qmui_borderWidth="0dp"
+        app:qmui_backgroundColor="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/chat_room_code_avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/group_add"
+                />
+            <TextView
+                android:id="@+id/chat_room_code_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/chat_room_code_avatar"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/chat_room_code_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+
+            android:scaleType="centerCrop"/>
+
+
+
+    </com.qmuiteam.qmui.widget.roundwidget.QMUIRoundRelativeLayout>
+
+</RelativeLayout>

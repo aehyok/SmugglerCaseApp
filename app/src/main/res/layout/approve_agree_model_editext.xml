@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+  >
+    <TextView
+        android:id="@+id/approve_agree_model_editext_text"
+        android:layout_width="60dp"
+        android:gravity="right"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:textColor="@color/black"
+        />
+
+
+    <com.sinostar.assistant.widget.ClearableEditText
+        android:id="@+id/approve_agree_modle_editext_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_shape"
+        android:textSize="14sp"
+        android:padding="5dp"
+        android:ellipsize="end"
+        android:gravity="top"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/grey"
+        android:layout_toEndOf="@+id/approve_agree_model_editext_text"
+
+        />
+
+</RelativeLayout>

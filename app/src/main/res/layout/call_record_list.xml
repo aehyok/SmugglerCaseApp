@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="12dp"
+    android:layout_marginStart="12dp"
+    android:padding="5dp">
+    <ImageView
+        android:id="@+id/call_record_list_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/no_answer"
+        />
+    <TextView
+        android:id="@+id/call_record_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/call_record_list_image"
+        android:layout_marginStart="10dp"
+        android:text="sdfsdfsdf"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/call_record_list_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/call_record_list_name"
+        android:layout_alignStart="@+id/call_record_list_name"
+        android:text="sdfsdfsdf"
+        android:background="@null"
+        android:textSize="15sp"
+        android:textColor="@color/grey"
+        android:drawableEnd="@drawable/ka1"
+        android:layout_marginTop="5dp"
+
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/call_more_message"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        />
+
+</RelativeLayout>

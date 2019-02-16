@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0000A0</color>
+    <color name="colorPrimaryDark">#8C95D6</color>
+    <color name="colorAccent">#8C95D6</color>
+    <color name="textColorPrimary">#363636</color>
+    <color name="homeTitleBar">#8f99db</color>
+    <color name="loginLine">#F7F7F7</color>
+    <color name="loginButton">#59a6f8</color>
+    <color name="true_black">#000000</color>
+    <color name="red">#f64f41</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#525252</color>
+    <color name="blue">#6872b3</color>
+    <color name="black">#171717</color>
+    <color name="green">#74b54b</color>
+    <color name="green_edit">#63CB3D</color>
+    <color name="normal">#8A000000</color>
+    <color name="majorText">#171717</color>
+    <color name="purple">#8f99db</color>
+    <color name="toastBackground">#3C3C3C</color>
+    <color name="guide_unselect">#c3c6e0</color>
+    <color name="background">#f3f3f3</color>
+    <color name="announce_tab">#FFCC00</color>
+    <color name="navigation_select">#0000A0</color>
+    <color name="navigation_no_select">#8080FF</color>
+    <color name="approve_agree_model_text">#0000FF</color>
+    <color name="agree">#81c854</color>
+    <color name="no_agree">#f64f41</color>
+    <color name="report">#6872b3</color>
+    <color name="edit_backgroud">#f1f1f1</color>
+    <color name="edit_stroke">#959595</color>
+    <color name="approve_button_text">#59a6f8</color>
+    <color name="login_button_text">#59a6f8</color>
+    <color name="approve_button_backgroud">#eef6fe</color>
+    <color name="left_before">#D8DBF2</color>
+    <color name="left_next">#D5D5D5</color>
+    <color name="watermark">#e4e8ff</color>
+    <color name="chat_edit_backgroud">#e9e9e9</color>
+    <color name="chat_voice_backgroud">#828282</color>
+    <color name="chat_voice_text_backgroud">#B84243</color>
+    <color name="chat_map_location_bg">#D9E9F9</color>
+    <color name="chat_tip_line_bg">#50ffffff</color>
+
+
+
+</resources>

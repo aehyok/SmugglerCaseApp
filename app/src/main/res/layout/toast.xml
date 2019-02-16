@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/toast_background"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/toast_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/ic_check_circle_white_48dp" />
+
+    <TextView
+
+        android:id="@+id/toast_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toast_image"
+        android:text="审核通过"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_centerVertical="true"
+        android:textSize="16sp"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

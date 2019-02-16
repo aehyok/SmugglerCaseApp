@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--外部存储路径-->
+    <external-path path="Android/data/com.sinostar.assistant/" name="files_root" />
+    <!--内部存储路径-->
+    <external-path path="." name="external_storage_root" />
+</paths>
+
+

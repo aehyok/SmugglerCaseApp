@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addressList.chat.Transmit">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <include
+        android:id="@+id/search_bar"
+        layout="@layout/chat_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        />
+    <com.qmuiteam.qmui.widget.grouplist.QMUICommonListItemView
+        android:id="@+id/create_new_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_bar"
+        app:qmui_accessory_type="chevron"
+        android:padding="12dp"
+
+        >
+
+    </com.qmuiteam.qmui.widget.grouplist.QMUICommonListItemView>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/create_new_chat"
+        android:text="最近聊天"
+        android:padding="5dp"
+        android:textSize="13sp"
+        android:layout_marginStart="7dp"
+        />
+
+    <ListView
+        android:id="@+id/transmit_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_below="@+id/text"
+     >
+
+    </ListView>
+
+
+</RelativeLayout>

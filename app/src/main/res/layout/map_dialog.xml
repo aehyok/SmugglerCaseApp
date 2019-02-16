@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/map_dialog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_alignParentStart="true"
+        android:background="@color/white"
+        android:layout_marginBottom="10dp"
+       >
+
+        <LinearLayout
+            android:id="@+id/map_dialog_item1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="16dp">
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/map_baidu"
+                />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/map_dialog_item1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/map_dialog_item2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_toEndOf="@+id/map_dialog_item1"
+            android:layout_marginLeft="45dp">
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/map_gaode" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/map_dialog_item2" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/map_dialog_cancle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_below="@+id/map_dialog_layout"
+        android:background="@color/white"
+        android:text="@string/map_dialog_cancle" />
+</RelativeLayout>

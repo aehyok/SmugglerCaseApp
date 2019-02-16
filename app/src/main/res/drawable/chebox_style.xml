@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_check_circle_green_500_18dp" android:state_checked="true" /><span style="white-space:pre">	</span>//选中状态
+    <item android:drawable="@drawable/ic_check_circle_grey_500_18dp" android:state_checked="false" />    	//未选中状态
+    <item android:drawable="@drawable/ic_check_circle_green_500_18dp" /><span style="white-space:pre">	</span>//默认状态
+
+</selector>

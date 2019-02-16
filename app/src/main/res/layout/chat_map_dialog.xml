@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/layout11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:paddingTop="10dp"
+        android:background="@color/background"
+        android:paddingBottom="10dp">
+        <com.sinostar.assistant.widget.ClearableEditText
+            android:id="@+id/chat_map_dialog_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:hint="搜索地点"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:drawableLeft="@drawable/ic_search_grey_500_18dp"
+            android:layout_toStartOf="@+id/chat_map_dialog_cancal"
+            android:background="@drawable/chat_map_search_shape"/>
+
+        <TextView
+            android:id="@+id/chat_map_dialog_cancal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green_edit"
+            android:text="取消"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/chat_map_dialog_refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout11">
+        <ListView
+        android:id="@+id/chat_map_dialog_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        </ListView>
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlPrimaryColor="@color/white"
+            app:layout_srlBackgroundColor="@color/black"
+            >
+        </com.scwang.smartrefresh.layout.footer.ClassicsFooter>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <RelativeLayout
+        android:id="@+id/chat_map_dialog_empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/chat_map_dialog_refreshLayout">
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

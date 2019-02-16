@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.research.ObtainEvidence"
+    android:focusable="true"
+    android:background="@color/background"
+    >
+
+    <RelativeLayout
+        android:id="@+id/obtain_evidence_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/homeTitleBar"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        >
+        <ImageButton
+            android:id="@+id/obtain_evidence_back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:focusableInTouchMode="true"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/obtain_evidence_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            app:srcCompat="@drawable/voice"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/obtain_evidence_qr_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/obtain_evidence_voice"
+            android:layout_marginEnd="8dp"
+            app:srcCompat="@drawable/qr_code"
+            android:layout_centerVertical="true"/>
+
+        <EditText
+            android:id="@+id/obtain_evidence_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/obtain_evidence_et_hint"
+            android:textSize="15sp"
+            android:textColor="@color/majorText"
+            android:drawableStart="@drawable/ic_search_grey_500_18dp"
+            android:background="@drawable/obtain_evidence_search"
+            android:imeOptions="actionSearch"
+            android:layout_toStartOf="@+id/obtain_evidence_qr_code"
+            android:layout_toEndOf="@+id/obtain_evidence_back_image"
+            android:layout_marginEnd="12dp"
+            android:singleLine="true"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+          />
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title"
+        app:srlEnableLoadMore="false"
+        app:srlEnableOverScrollDrag="true"
+        >
+        <com.sinostar.assistant.widget.MyListView
+            android:id="@+id/obtain_evidence_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@color/white">
+        </com.sinostar.assistant.widget.MyListView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+  <include
+      android:id="@+id/title"
+      layout="@layout/title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/obtain_evidence_title_bar"
+      />
+
+
+
+</RelativeLayout>

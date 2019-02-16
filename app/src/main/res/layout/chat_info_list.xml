@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/chat_room_record"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:sLeftTextString="聊天记录"
+            app:sRightTextSize="13sp"
+            app:sLeftTextColor="@color/majorText"
+            app:sRightTextColor="@color/grey"
+            app:sRightTvDrawableRight="@drawable/ic_keyboard_arrow_right_grey_500_24dp"
+            />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/chat_room_be_quiet"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:sLeftTextString="消息免打扰"
+            app:sRightTextSize="13sp"
+            app:sLeftTextColor="@color/majorText"
+            android:layout_below="@+id/chat_room_record"
+            app:sRightTvDrawableRight="@drawable/turn_off"
+            />
+        <com.allen.library.SuperTextView
+            android:id="@+id/chat_room_set_top"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:sLeftTextString="置顶聊天"
+            app:sRightTextSize="13sp"
+            app:sLeftTextColor="@color/majorText"
+            android:layout_below="@+id/chat_room_be_quiet"
+            app:sRightTvDrawableRight="@drawable/turn_off"
+            />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/chat_room_clear"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:sLeftTextString="清空聊天记录"
+            app:sRightTextSize="13sp"
+            app:sLeftTextColor="@color/majorText"
+            android:layout_below="@+id/chat_room_set_top"
+            />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.cassAssistant.announce.Announce"
+    >
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ImageView
+        android:id="@+id/announce_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/case_assistant_top_image"
+
+        />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/announce_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/announce_image"
+        style="@style/PickerTabLayout"
+
+        >
+        <android.support.design.widget.TabItem
+            android:id="@+id/announce_tabItem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="待办"
+            />
+        <android.support.design.widget.TabItem
+            android:id="@+id/announce_tabItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已办"
+            />
+        <android.support.design.widget.TabItem
+            android:id="@+id/announce_tabItem3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预警"
+            />
+        <android.support.design.widget.TabItem
+            android:id="@+id/announce_tabItem4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知"
+            />
+
+    </android.support.design.widget.TabLayout>
+
+    <RelativeLayout
+        android:id="@+id/announce_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/announce_tablayout"
+
+        >
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

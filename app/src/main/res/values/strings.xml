@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">aehyok</string>
+    <string name="guide_content">智慧缉私办案助手</string>
+
+    <string name="login_button">登录</string>
+    <string name="home_title">拱北海关缉私移动应用</string>
+    <string name="home_title_sz">深圳海关缉私移动应用</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="glide_plus_icon_string">android.resource://</string>
+    <string name="wait_approve">待审批</string>
+    <string name="finish_approve">已审批</string>
+    <string name="report_approve">报上级审批</string>
+    <string name="mobile_approve_first">文书审批</string>
+    <string name="mobile_approve_second">回退审批</string>
+    <string name="mobile_approve_third">申领审批</string>
+    <string name="mobile_approve_fourth">授权审批</string>
+    <string name="mobile_approve_title_text">我的审批</string>
+    <string name="case_assistant_title_text">办案助手</string>
+    <string name="case_assistant_first">通知公告</string>
+    <string name="case_assistant_second">行政助手</string>
+    <string name="case_assistant_third">辅助助手</string>
+    <string name="case_assistant_fourth">我的</string>
+    <string name="report_demo_title_text">呈请报告模版</string>
+    <string name="map_dialog_cancle">取消</string>
+    <string name="map_dialog_item2">高德地图</string>
+    <string name="map_dialog_item1">百度地图</string>
+    <string name="data_query_person_person_name">姓名</string>
+    <string name="data_query_person_resource">数据来源</string>
+    <string name="data_query_person_button">查询</string>
+    <string name="data_query_tips">*因网络技术故障等原因造成数据更新迟缓时，以各海关现场提供的信息为准。</string>
+    <string name="obtain_evidence_title">现场取证</string>
+    <string name="image_delet1">拖到此处删除</string>
+    <string name="image_delete2">松手即可删除</string>
+    <string name="image_dialog_camera">拍摄</string>
+    <string name="image_dialog_photo">从手机相册选择</string>
+    <string name="obtain_evidence_et_hint">搜索案件编号或者案件名称</string>
+    <string name="login_chebox">阅读并同意拱北办案助手协议</string>
+    <string name="login_chebox_sz">阅读并同意深圳办案助手协议</string>
+    <string name="link_back_num">案件编号：</string>
+    <string name="link_back_name">案件名称：</string>
+    <string name="link_back_state">当前状态：</string>
+    <string name="link_back_reason">回退原因：</string>
+    <string name="adress_list_item1">通话记录</string>
+    <string name="adress_list_item2">通讯录</string>
+    <string name="adress_list_item3">微消息</string>
+    <string name="chat_tooShort">说话时间太短</string>
+    <string name="chat_moveUp">手指上划，取消发送</string>
+    <string name="chat_release">松开手指，取消发送</string>
+    <string name="chat_normal">按住说话</string>
+    <string name="chat_recording">松开结束</string>
+    <string name="chat_want_to_cancel">松开取消</string>
+    <string name="delete_tip">是否删除该条消息？</string>
+    <string name="delete_dialog_confirm">确定</string>
+    <string name="chat_room_quit">删除并退出</string>
+    <string name="chat_room_code_title">群二维码名片</string>
+</resources>

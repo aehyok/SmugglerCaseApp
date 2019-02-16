@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addressList.chat.chatRecord.ChatRecord">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <include
+        android:id="@+id/chat_search_bar"
+        layout="@layout/chat_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        />
+    <android.support.design.widget.TabLayout
+        android:id="@+id/chat_record_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_search_bar"
+        style="@style/PickerTabLayout">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/chat_record_tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部"
+            />
+        <android.support.design.widget.TabItem
+            android:id="@+id/chat_record_tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片/视频"
+            />
+        <android.support.design.widget.TabItem
+            android:id="@+id/chat_record_tab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文件"
+            />
+
+    </android.support.design.widget.TabLayout>
+    <RelativeLayout
+        android:id="@+id/chat_record_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/chat_record_tablayout">
+
+    </RelativeLayout>
+
+</RelativeLayout>

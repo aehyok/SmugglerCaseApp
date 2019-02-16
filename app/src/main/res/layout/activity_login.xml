@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.LoginActivity"
+    >
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePureScrollMode="true"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/login_empty_button"
+                        android:layout_width="1dp"
+                        android:paddingTop="50dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"/>
+
+
+                    <RelativeLayout
+                        android:id="@+id/login_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/login_title_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/login_image"/>
+
+
+                        <RelativeLayout
+                            android:id="@+id/login_name_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/login_title_image"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:padding="8dp"
+                            >
+
+                            <ImageView
+                                android:id="@+id/login_text1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/login_person" />
+
+                            <com.sinostar.assistant.widget.ClearableEditText
+                                android:id="@+id/login_uesr_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:hint="请输入登用户"
+                                android:textSize="15sp"
+                                android:background="@null"
+                                android:padding="10dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/grey"
+                                android:layout_toEndOf="@+id/login_text1"/>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/loginLine"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/login_uesr_name"
+                                />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/login_passport_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/login_name_layout"
+                            android:layout_alignEnd="@+id/login_name_layout"
+                            android:layout_alignStart="@+id/login_name_layout"
+                            android:layout_marginTop="10dp"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/login_text2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/login_password" />
+
+                            <com.sinostar.assistant.widget.ClearableEditText
+                                android:id="@+id/login_uesr_passport"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/login_text2"
+                                android:hint="请输入登录密码"
+                                android:background="@null"
+                                android:padding="10dp"
+                                android:textSize="15sp"
+                                android:singleLine="true"
+                                android:imeOptions="actionGo"
+                                android:textColorHint="@color/grey"/>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/loginLine"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/login_uesr_passport"
+                                />
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/login_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_below="@+id/login_passport_layout"
+                            android:layout_marginTop="25dp"
+                            android:layout_alignEnd="@+id/login_name_layout"
+                            android:layout_alignStart="@+id/login_name_layout"
+                            android:background="@drawable/login_button_shape"
+                            android:textColor="@color/white"
+                            android:text="@string/login_button" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/login_button"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center">
+                            <CheckBox
+                                android:id="@+id/login_chebox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/CustomCheckboxTheme"
+                                android:checked="true"
+                                />
+                            <TextView
+                                android:id="@+id/login_chebox_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/login_chebox"
+                                android:layout_alignBaseline="@+id/login_chebox"
+                                android:text="sdfasdf"
+                                android:layout_marginStart="5dp"
+                                android:background="#00000000"
+                                />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+
+    <include
+        android:id="@+id/other_layout"
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+    <ImageView
+        android:id="@+id/login_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/back"/>
+
+</RelativeLayout>

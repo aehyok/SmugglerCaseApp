@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_first_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/bottom_bar_image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_wssp_1" />
+
+            <TextView
+                android:id="@+id/bottom_bar_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottom_bar_image1"
+                android:layout_centerHorizontal="true"
+                android:text="@string/mobile_approve_first"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/bottom_bar_num1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/bottom_bar_text1"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_round_textview"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:visibility="gone"
+               />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_second_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/bottom_bar_image2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_hjhtsp_1" />
+
+            <TextView
+                android:id="@+id/bottom_bar_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottom_bar_image2"
+                android:layout_centerHorizontal="true"
+                android:text="@string/mobile_approve_second"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/bottom_bar_num2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/bottom_bar_image2"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_round_textview"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:visibility="gone"
+               />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_third_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/bottom_bar_image3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_wsslsp_1" />
+
+            <TextView
+                android:id="@+id/bottom_bar_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottom_bar_image3"
+                android:layout_centerHorizontal="true"
+                android:text="@string/mobile_approve_third"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/bottom_bar_num3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/bottom_bar_image3"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_round_textview"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:visibility="gone"
+               />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_fourth_laout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/bottom_bar_image4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_sqsp_1" />
+
+            <TextView
+                android:id="@+id/bottom_bar_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottom_bar_image4"
+                android:layout_centerHorizontal="true"
+                android:text="@string/mobile_approve_fourth"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/bottom_bar_num4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/bottom_bar_text4"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_round_textview"
+                android:gravity="center"
+                android:text="9"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+
+
+</LinearLayout>

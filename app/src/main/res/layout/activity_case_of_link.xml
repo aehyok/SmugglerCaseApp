@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.cassAssistant.announce.link.CaseOfLInk">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/case_of_link_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar">
+        <RelativeLayout
+            android:id="@+id/case_of_link_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          >
+            <TextView
+                android:id="@+id/case_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:text="编号：132456" />
+
+            <TextView
+                android:id="@+id/case_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/case_num"
+                android:layout_alignStart="@+id/case_num"
+                android:layout_marginTop="8dp"
+                android:text="名称：广东省某某公司走私事件" />
+            <TextView
+                android:id="@+id/case_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/case_name"
+                android:layout_alignStart="@+id/case_num"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:text="状态：案件受理" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/case_time"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/case_state"-->
+                <!--android:layout_alignStart="@+id/case_num"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:text="日期：2018年6月23日" />-->
+
+            <TextView
+                android:id="@+id/case_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/case_state"
+                android:layout_toLeftOf="@+id/case_more_image"
+                android:textColor="@color/black"
+                android:text="更多" />
+
+            <ImageView
+                android:id="@+id/case_more_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/case_state"
+                android:layout_alignBottom="@+id/case_state"
+                app:srcCompat="@drawable/right"
+                android:layout_marginRight="12dp"
+                android:layout_alignParentEnd="true"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/case_state"
+                android:background="@color/grey"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/case_of_link_text_layout">
+
+            <ListView
+                android:id="@+id/left_list"
+                android:layout_width="65dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                />
+            <include
+                android:id="@+id/title"
+                layout="@layout/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/left_list"
+                />
+
+            <ExpandableListView
+                android:id="@+id/right_list"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/left_list"
+                android:groupIndicator="@null"
+                android:layout_below="@+id/title"
+                android:divider="@color/background"
+                android:dividerHeight="1dp"
+                android:padding="5dp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

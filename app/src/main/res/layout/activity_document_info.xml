@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.mobile.info.DocumentInfo">
+
+
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <include
+        android:id="@+id/other_layout"
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        />
+    <RelativeLayout
+        android:id="@+id/document_fail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="服务器错误"
+            android:background="#555555"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:paddingLeft="12dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView13"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="404-找不到文件或目录。"
+                android:textColor="#cc0000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView14"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="您要查找的资源可能已被删除，已更改名称或者暂时不可用。"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/document_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar">
+
+    </FrameLayout>
+    <WebView
+        android:id="@+id/pdf_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        >
+
+    </WebView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomInfoActivity">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePureScrollMode="true"
+        android:layout_below="@+id/title_bar">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.sinostar.assistant.widget.MyGridView
+                        android:id="@+id/chat_room_info_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="5"
+
+                        >
+                    </com.sinostar.assistant.widget.MyGridView>
+
+                    <com.allen.library.SuperTextView
+                        android:id="@+id/chat_room_more_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:sCenterTextString="查看更多群成员"
+                        app:sCenterTvDrawableRight="@drawable/ic_keyboard_arrow_right_grey_500_24dp"
+                        app:sCenterTextColor="@color/grey"
+                        android:layout_centerHorizontal="true"
+                        app:sTextViewDrawablePadding="0dp"
+                        app:sDividerLineType="none"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/chat_room_info_grid"/>
+                </RelativeLayout>
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/background"
+                    android:layout_below="@+id/layout1"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/layout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line1"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:background="@color/white"
+                    >
+
+                    <com.allen.library.SuperTextView
+                        android:id="@+id/chat_room_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:sLeftTextString="群聊名称"
+                        app:sRightTextSize="13sp"
+                        app:sRightTextGravity="center"
+                        app:sLeftTextColor="@color/majorText"
+                        app:sRightTextColor="@color/grey"
+                        app:sTextViewDrawablePadding="0dp"
+                        app:sShapeSelectorPressedColor="@color/transparent"
+                        app:sRightTvDrawableRight="@drawable/ic_keyboard_arrow_right_grey_500_24dp"
+                        />
+
+                    <com.allen.library.SuperTextView
+                        android:id="@+id/chat_room_QR_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:sLeftTextString="群二维码"
+                        app:sRightTvDrawableLeft="@drawable/code"
+                        app:sRightTextSize="13sp"
+                        app:sLeftTextColor="@color/majorText"
+                        app:sRightTextColor="@color/grey"
+                        app:sTextViewDrawablePadding="0dp"
+                        app:sRightTvDrawableRight="@drawable/ic_keyboard_arrow_right_grey_500_24dp"
+                        android:layout_below="@+id/chat_room_name"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/chat_room_announce_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:layout_below="@+id/chat_room_QR_code">
+                        <com.allen.library.SuperTextView
+                            android:id="@+id/chat_room_announce_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:sLeftTextString="群公告"
+                            app:sRightTextSize="13sp"
+                            app:sRightTextGravity="center"
+                            app:sLeftTextColor="@color/majorText"
+                            app:sRightTextColor="@color/grey"
+                            app:sTextViewDrawablePadding="0dp"
+                            app:sLeftViewGravity="left_center"
+                            app:sRightTvDrawableRight="@drawable/ic_keyboard_arrow_right_grey_500_24dp"
+                            app:sDividerLineType="none"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/chat_room_announce"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="15sp"
+                            android:lineSpacingExtra="3dp"
+                            android:textSize="12sp"
+                            android:textColor="@color/grey"
+                            android:layout_below="@+id/chat_room_announce_text"
+                            android:visibility="gone"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/background"
+                    android:layout_below="@+id/layout2"
+                    />
+
+                <include
+                    android:id="@+id/layout3"
+                    layout="@layout/chat_info_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line2"
+                    />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/chat_room_delete_and_quiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout3"
+                    app:qmui_radius="4dp"
+                    app:qmui_borderWidth="0dp"
+                    app:qmui_backgroundColor="@color/red"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="20dp"
+                    android:padding="12dp"
+                    android:text="@string/chat_room_quit"
+                    android:textColor="@color/white"
+
+                    />
+
+            </RelativeLayout>
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+</RelativeLayout>

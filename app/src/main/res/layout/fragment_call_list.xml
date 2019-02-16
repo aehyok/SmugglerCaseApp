@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.addressList.addressListInfo.AdresslListInfoFragment">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <include
+        android:id="@+id/chat_search_bar"
+        layout="@layout/chat_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_bar"
+        />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/chat_search_bar"
+        app:srlEnablePureScrollMode="true">
+
+
+            <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+                android:id="@+id/adress_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="5dp">
+            </com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    
+</RelativeLayout>
