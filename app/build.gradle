@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "com.aehyok.aehyok"
+        applicationId "com.aehyok.test"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1

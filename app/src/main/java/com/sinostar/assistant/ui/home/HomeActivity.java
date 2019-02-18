@@ -57,7 +57,7 @@ public class HomeActivity extends BaseActivity {
     HomeGridViewAdapter homeGridViewAdapter;
     AppCompatActivity context;
     List<String> list = new ArrayList<>();
-    String[] homeText = {"通知公告", "办案助手", "预警提示", "执法档案", "现场取证", "移动审批", "数据查询", "通讯录"};
+    String[] homeText = {"Blog Message", "Assistant", "Blog Remind", "Blog Manager", "Gallery", "Approval", "Query", "Contacts"};
     int[] homeImage = {R.drawable.tztg, R.drawable.bazs, R.drawable.yjts,
             R.drawable.zfda, R.drawable.xcqz, R.drawable.ydsp, R.drawable.sjcx, R.drawable.txl};
     String[] homeTextSZ = {"通知公告", "预警提示", "现场取证", "移动审批", "数据查询", "通讯录"};
