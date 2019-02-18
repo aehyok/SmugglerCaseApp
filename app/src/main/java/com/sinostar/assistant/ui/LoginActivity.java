@@ -88,8 +88,8 @@ public class LoginActivity extends BaseActivity {
         context = LoginActivity.this;
         init();
         //测试用
-        loginUesrName.setText("zhaofudi");
-        loginUesrPassport.setText("zhaofudi");
+        loginUesrName.setText("wanghaiwen");
+        loginUesrPassport.setText("wanghaiwen");
         loginUesrPassport.setTransformationMethod(PasswordTransformationMethod.getInstance());
         initListener();
     }
@@ -126,9 +126,9 @@ public class LoginActivity extends BaseActivity {
         }
 
         s.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.login_button_text)),
-                5, 13, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                14, 38, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         loginCheboxText.setMovementMethod(LinkMovementMethod.getInstance());
-        s.setSpan(new TextClick(), 5, 13
+        s.setSpan(new TextClick(), 14, 38
                 , Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         loginCheboxText.setText(s);
 

@@ -72,7 +72,7 @@ public class DataQuery extends BaseActivity {
 
 
     private void init() {
-        titleBarText.setText("缉私记录查询");
+        titleBarText.setText("Query");
         addFragment(getSupportFragmentManager(), dataQueryPerson, R.id.data_query_fragment_container);
     }
 
