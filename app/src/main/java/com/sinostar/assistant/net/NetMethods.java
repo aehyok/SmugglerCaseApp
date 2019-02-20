@@ -31,93 +31,96 @@ public class NetMethods {
     /**
      * 封装线程管理和订阅的过程
      */
-    public static void NerMethods(Observable observable, Observer observer) {
-
+    public static void NetMethods(Observable observable, Observer observer) {
         observable.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
+    public static void  getTest(MyObserver<Login> observer, Map<String,String> loginMap) {
+        NetMethods(Net.getInstance().serviceProvider(). getLogin(loginMap),observer);
+    }
+
     public static void  getLogin(MyObserver<Login> observer, Map<String,String> loginMap) {
-        NerMethods(Net.getInstance().serviceProvider(). getLogin(loginMap),observer);
+        NetMethods(Net.getInstance().serviceProvider(). getLogin(loginMap),observer);
     }
     public static void getApprovalPending(MyObserver<List<Apporove>> observer,String userId) {
-        NerMethods(Net.getInstance().serviceProvider().getApprovalPending(userId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getApprovalPending(userId),observer);
     }
     public static void getLinkBacklPending(MyObserver<List<Apporove>> observer,String userId) {
-        NerMethods(Net.getInstance().serviceProvider().getLinkBacklPending(userId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getLinkBacklPending(userId),observer);
     }
     public static void getLinkBackPended(MyObserver<List<Apporove>> observer,String userId) {
-        NerMethods(Net.getInstance().serviceProvider().getLinkBackPended(userId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getLinkBackPended(userId),observer);
     }
     public static void getApprovalPended(MyObserver<List<Apporove>> observer,String userId) {
-        NerMethods(Net.getInstance().serviceProvider().getApprovalPended(userId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getApprovalPended(userId),observer);
     }
     public static void getSuperiorApprovalPended(MyObserver<List<Apporove>> observer,String userId) {
-        NerMethods(Net.getInstance().serviceProvider().getSuperiorApprovalPended(userId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getSuperiorApprovalPended(userId),observer);
     }
     public static void getDocumentInfo(MyObserver<Document> observer, String itemId) {
-        NerMethods(Net.getInstance().serviceProvider().getDocumentInfo(itemId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getDocumentInfo(itemId),observer);
     }
 
     public static void getLinkBackInfo(MyObserver<LinkBackInfo> observer, String bzid,String userId) {
-        NerMethods(Net.getInstance().serviceProvider().getLinkBackInfo(bzid,userId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getLinkBackInfo(bzid,userId),observer);
     }
 
     public static void getApproveReportInfo(MyObserver<Document> observer, String itemId, String userId) {
-        NerMethods(Net.getInstance().serviceProvider().getApproveReportInfo(itemId,userId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getApproveReportInfo(itemId,userId),observer);
     }
 
     public static void  getApproveAgreeModel(MyObserver<Object> observer, String userId, String bzId, String actionId) {
-        NerMethods(Net.getInstance().serviceProvider(). getApproveAgreeModel(userId,bzId,actionId),observer);
+        NetMethods(Net.getInstance().serviceProvider(). getApproveAgreeModel(userId,bzId,actionId),observer);
     }
     public static void  getPassButton(MyObserver<List<LinkBackInfo.ButtonListBean>> observer, String bzId,  String userId) {
-        NerMethods(Net.getInstance().serviceProvider(). getPassButton(bzId,userId),observer);
+        NetMethods(Net.getInstance().serviceProvider(). getPassButton(bzId,userId),observer);
     }
     public static void  getSuperiorApprovalUserList(MyObserver<List<ApproveAgreeModel.RYMBCOMBean>> observer, String unitId) {
-        NerMethods(Net.getInstance().serviceProvider(). getSuperiorApprovalUserList(unitId),observer);
+        NetMethods(Net.getInstance().serviceProvider(). getSuperiorApprovalUserList(unitId),observer);
     }
     public static void  getApproAgreeModelHandlerList(MyObserver<List<ApproveAgreeModel.RYMBCOMBean>> observer, String unitId) {
-        NerMethods(Net.getInstance().serviceProvider(). getApproAgreeModelHandlerList(unitId),observer);
+        NetMethods(Net.getInstance().serviceProvider(). getApproAgreeModelHandlerList(unitId),observer);
     }
 
     public static void  getApproveAgreeSend(MyObserver<ApproveAgreeSend>observer, String jsonString) {
-        NerMethods(Net.getInstance().serviceProvider(). getApproveAgreeSend(jsonString),observer);
+        NetMethods(Net.getInstance().serviceProvider(). getApproveAgreeSend(jsonString),observer);
     }
     public static void  getDataQuery(MyObserver<DataQureyPerson> observer, String name, String dateTime, String queryType) {
-        NerMethods(Net.getInstance().serviceProvider().getDataQueryPerson(name,dateTime,queryType),observer);
+        NetMethods(Net.getInstance().serviceProvider().getDataQueryPerson(name,dateTime,queryType),observer);
     }
     public static void  getDataQueryPersonNoSource(MyObserver<List<DataQueryPersonNoResource>> observer, String name, String dateTime) {
-        NerMethods(Net.getInstance().serviceProvider().getDataQueryPersonNoSource(name,dateTime),observer);
+        NetMethods(Net.getInstance().serviceProvider().getDataQueryPersonNoSource(name,dateTime),observer);
     }
 
     public static void  getDataQueryCompany(MyObserver<DataQueryCompanyBean> observer, String companyName, String queryType) {
-        NerMethods(Net.getInstance().serviceProvider().getDataQueryCompany(companyName,queryType),observer);
+        NetMethods(Net.getInstance().serviceProvider().getDataQueryCompany(companyName,queryType),observer);
     }
     public static void  getDataQueryCompanyNoSource(MyObserver<List<DataQueryPersonNoResource>> observer, String companyName) {
-        NerMethods(Net.getInstance().serviceProvider().getDataQueryCompanyNoSource(companyName),observer);
+        NetMethods(Net.getInstance().serviceProvider().getDataQueryCompanyNoSource(companyName),observer);
     }
     public static void  getObtainEvidence(MyObserver<List<ObtainEvidenceBean>> observer, String userID) {
-        NerMethods(Net.getInstance().serviceProvider().getObtainEvidence(userID),observer);
+        NetMethods(Net.getInstance().serviceProvider().getObtainEvidence(userID),observer);
     }
     public static void  getGuideLine(MyObserver<List<ObtainEvidenceBean>> observer, String guidelineId,String body) {
-        NerMethods(Net.getInstance().serviceProvider().getGuideLine(guidelineId,body),observer);
+        NetMethods(Net.getInstance().serviceProvider().getGuideLine(guidelineId,body),observer);
     }
     public static void  getGuideLinePagging(MyObserver<List<ObtainEvidenceBean>> observer, String guidelineId,String body,double pageIndex,double pageSize) {
-        NerMethods(Net.getInstance().serviceProvider().getGuideLinePagging(guidelineId,body,pageIndex,pageSize),observer);
+        NetMethods(Net.getInstance().serviceProvider().getGuideLinePagging(guidelineId,body,pageIndex,pageSize),observer);
     }
     public static void  getLinkCase(MyObserver<CaseLinkCase> observer, String caseId, String caseType) {
-        NerMethods(Net.getInstance().serviceProvider().getLinkCase(caseId,caseType),observer);
+        NetMethods(Net.getInstance().serviceProvider().getLinkCase(caseId,caseType),observer);
     }
     public static void  getLinkAction(MyObserver<List<CaseLinkAction>> observer, String linkId) {
-        NerMethods(Net.getInstance().serviceProvider().getLinkAction(linkId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getLinkAction(linkId),observer);
     }
     public static void  getLinkActionInfo(MyObserver<List<CaseInfoActionInfo>> observer, String actionId) {
-        NerMethods(Net.getInstance().serviceProvider().getLinkActionInfo(actionId),observer);
+        NetMethods(Net.getInstance().serviceProvider().getLinkActionInfo(actionId),observer);
     }
 
     public static void  getUploadImage(MyObserver<Object> observer, String userId,String caseId, Map<String, RequestBody> params) {
-        NerMethods(Net.getInstance().serviceProvider().getUploadImage(userId,caseId,params),observer);
+        NetMethods(Net.getInstance().serviceProvider().getUploadImage(userId,caseId,params),observer);
     }
 
 

@@ -37,6 +37,14 @@ import retrofit2.http.Query;
 
 public interface RetrofitService {
 
+
+    /**
+     * 测试登录
+     * @param loginMap
+     * @return
+     */
+    @POST("/api/Account/Login")
+    Observable<Login> getTest(@Body()Map<String,String> loginMap);
     /**
      * 登陆
      * @param loginMap

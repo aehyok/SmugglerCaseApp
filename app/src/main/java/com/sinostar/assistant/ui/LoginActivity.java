@@ -208,7 +208,8 @@ public class LoginActivity extends BaseActivity {
                     LogUtil.d("登录的结果", e.toString());
                 }
             };
-            NetMethods.getLogin(new MyObserver<Login>(context, listener), loginMap);
+            //NetMethods.getLogin(new MyObserver<Login>(context, listener), loginMap);
+            NetMethods.getTest(new MyObserver<Login>(context, listener), loginMap);
         }
     }
 

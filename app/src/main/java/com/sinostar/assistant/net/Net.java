@@ -14,9 +14,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * retrofit请求封装
  */
 public class Net {
-    private ACache aCache;
-    private Context mContext;
-
     private static Net net;
     private RetrofitService service;
 
@@ -27,16 +24,14 @@ public class Net {
         return net;
     }
 
-
     public RetrofitService serviceProvider() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constent.URL)
-                .addConverterFactory(new NullOnEmptyConverterFactory())
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl(Constent.URL)   // 设置网络请求的Url地址
+                .addConverterFactory(new NullOnEmptyConverterFactory())    // 设置数据解析器
+                .addConverterFactory(GsonConverterFactory.create())        // 设置数据解析器
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // 支持RxJava平台
                 .build();
-        service = retrofit.create(RetrofitService.class);
+        service = retrofit.create(RetrofitService.class);    //创建网络请求接口实例
         return service;
     }
-
 }
