@@ -46,4 +46,6 @@ public class Constent {
     public final static String TRANSIMIT_NAME ="transmit_name";
     public final static String TRANSIMIT_MESSAGE ="transmit_message";
 
+    public final static String Blog_ClientId="187d5f99-7b87-493d-8344-49f75140f651";
+    public final static String Blog_ClientSecret="nB9qRKWNOeaK1-V8mFmAASoZgVggHbQbwDK-gYXqUwzH-plt9_PB3btI_TpU2Mb2RzcvfCB6w2rJiKnv";
 }

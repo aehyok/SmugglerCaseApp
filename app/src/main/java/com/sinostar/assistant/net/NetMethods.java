@@ -1,5 +1,6 @@
 package com.sinostar.assistant.net;
 
+import com.google.gson.JsonObject;
 import com.sinostar.assistant.bean.ApproveAgreeModel;
 import com.sinostar.assistant.bean.CaseInfoActionInfo;
 import com.sinostar.assistant.bean.CaseLinkAction;
@@ -123,9 +124,7 @@ public class NetMethods {
         NetMethods(Net.getInstance().serviceProvider().getUploadImage(userId,caseId,params),observer);
     }
 
-
-
-
-
-
+    public static void  getToken(MyObserver<JsonObject> observer, String clientId, String clientSecret, String grantType, String url) {
+        NetMethods(Net.getInstance().serviceProvider(url).getToken(clientId,clientSecret,grantType),observer);
+    }
 }

@@ -1,5 +1,6 @@
 package com.sinostar.assistant.net;
 
+import com.google.gson.JsonObject;
 import com.sinostar.assistant.bean.Apporove;
 import com.sinostar.assistant.bean.ApproveAgreeModel;
 import com.sinostar.assistant.bean.CaseInfoActionInfo;
@@ -287,7 +288,17 @@ public interface RetrofitService {
                                                @PartMap Map<String, RequestBody> params
                                     );
 
-
+    /**
+     * 获取博客园（文书审批）
+     * @param clientId
+     *  @param clientSecret
+     *  @param grantType
+     * @return
+     */
+    @GET("/api/Blog/Article/1")
+    Observable<JsonObject> getToken(@Query("client_id") String clientId,
+                                    @Query( "client_secret" ) String clientSecret,
+                                    @Query("grant_type") String grantType);
 
 
 }

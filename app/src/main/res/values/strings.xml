@@ -55,4 +55,6 @@
     <string name="delete_dialog_confirm">确定</string>
     <string name="chat_room_quit">删除并退出</string>
     <string name="chat_room_code_title">群二维码名片</string>
+    <string name="title_activity_main">MainActivity</string>
+
 </resources>

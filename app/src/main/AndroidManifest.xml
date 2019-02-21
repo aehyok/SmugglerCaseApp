@@ -368,6 +368,9 @@
         <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomInfoActivity" />
         <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomEditActivity" />
         <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomCodeActivity" />
+        <activity
+            android:name=".ui.BlogMessage.MainActivity"
+            android:label="@string/title_activity_main"></activity>
     </application>
 
 </manifest>
