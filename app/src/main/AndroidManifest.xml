@@ -61,7 +61,6 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon"
@@ -77,8 +76,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-
 
         <!-- 华为推送 -->
         <meta-data
@@ -358,6 +355,11 @@
             android:name=".ui.addressList.chatRoom.create.CreateChatRoom"
             android:screenOrientation="portrait" />
 
+        <!-- Blog Message -->
+        <activity
+            android:name=".ui.BlogMessage.BlogMessageActivity"
+            android:screenOrientation="portrait" />
+
         <!-- 全局dialog弹窗 -->
         <activity
             android:name=".ui.DialogActivity"
@@ -365,7 +367,7 @@
             android:theme="@style/translucent" />
         <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomInfoActivity" />
         <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomEditActivity" />
-        <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomCodeActivity"></activity>
+        <activity android:name=".ui.addressList.chatRoom.chatRoomInfo.ChatRoomCodeActivity" />
     </application>
 
 </manifest>

@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.sinostar.assistant.R;
 import com.sinostar.assistant.base.ApplicationUtil;
 import com.sinostar.assistant.base.BaseActivity;
+import com.sinostar.assistant.ui.BlogMessage.BlogMessageActivity;
 import com.sinostar.assistant.ui.HMSPushHelper;
 import com.sinostar.assistant.ui.LoginActivity;
 import com.sinostar.assistant.ui.addressList.AdressList;
@@ -142,6 +143,7 @@ public class HomeActivity extends BaseActivity {
                 }else{
                     switch (i) {
                         case 0:  //通知公告
+                            isLogin( BlogMessageActivity.class );
                             break;
                         case 1:  //办案助手
                             isLogin(CaseAssistantActivity.class);
