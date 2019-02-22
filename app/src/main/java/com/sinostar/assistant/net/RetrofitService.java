@@ -18,6 +18,8 @@ import com.sinostar.assistant.bean.Login;
 import com.sinostar.assistant.bean.ObtainEvidenceBean;
 import com.sinostar.assistant.bean.ApproveAgreeSend;
 
+import org.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -290,15 +292,11 @@ public interface RetrofitService {
 
     /**
      * 获取博客园（文书审批）
-     * @param clientId
-     *  @param clientSecret
-     *  @param grantType
+     * @param pageIndex
      * @return
      */
-    @GET("/api/Blog/Article/1")
-    Observable<JsonObject> getToken(@Query("client_id") String clientId,
-                                    @Query( "client_secret" ) String clientSecret,
-                                    @Query("grant_type") String grantType);
+    @GET("/api/Blog/Article/{pageIndex}")
+    Observable<JsonObject> getToken(@Path("pageIndex") Integer pageIndex);
 
 
 }

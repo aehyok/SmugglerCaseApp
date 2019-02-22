@@ -26,6 +26,7 @@ import com.sinostar.assistant.R;
 import com.sinostar.assistant.base.ApplicationUtil;
 import com.sinostar.assistant.base.BaseActivity;
 import com.sinostar.assistant.ui.BlogMessage.BlogMessageActivity;
+import com.sinostar.assistant.ui.BlogMessage.BlogRemindActivity;
 import com.sinostar.assistant.ui.HMSPushHelper;
 import com.sinostar.assistant.ui.LoginActivity;
 import com.sinostar.assistant.ui.addressList.AdressList;
@@ -149,6 +150,7 @@ public class HomeActivity extends BaseActivity {
                             isLogin(CaseAssistantActivity.class);
                             break;
                         case 2:  //预警提示
+                            isLogin(BlogRemindActivity.class);
                             break;
                         case 3:  //执法档案
                             break;

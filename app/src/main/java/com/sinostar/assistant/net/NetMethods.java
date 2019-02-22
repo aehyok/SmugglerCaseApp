@@ -18,6 +18,8 @@ import com.sinostar.assistant.bean.ApproveAgreeSend;
 import com.sinostar.assistant.subscribers.MyObserver;
 import com.sinostar.assistant.bean.Apporove;
 
+import org.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -124,7 +126,7 @@ public class NetMethods {
         NetMethods(Net.getInstance().serviceProvider().getUploadImage(userId,caseId,params),observer);
     }
 
-    public static void  getToken(MyObserver<JsonObject> observer, String clientId, String clientSecret, String grantType, String url) {
-        NetMethods(Net.getInstance().serviceProvider(url).getToken(clientId,clientSecret,grantType),observer);
+    public static void  getToken(MyObserver<JsonObject> observer, Integer pageIndex,String url) {
+        NetMethods(Net.getInstance().serviceProvider(url).getToken(pageIndex),observer);
     }
 }

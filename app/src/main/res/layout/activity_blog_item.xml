@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="86dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/login_title_images"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blog" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/test_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:text="我爱小狗"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/test_item_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/test_item_title"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:maxLines="2"
+                android:text="军总公司正在进行洽谈工作，很快军总就走上人生巅峰了，好羡慕他哟。"
+                android:textColor="#999999"
+                android:textSize="14sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/title_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jolinson"
+                    android:textColor="#333333"
+                    android:textSize="10sp"
+                    android:layout_marginLeft="2dp"/>
+                <TextView
+                    android:id="@+id/title_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="2019年2月21日"
+                    android:textColor="#333333"
+                    android:textSize="10sp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:gravity="right"
+                    android:layout_marginRight="2dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:background="#E6DEDB"/>
+</LinearLayout>
