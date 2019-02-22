@@ -14,7 +14,8 @@ public class BlogArticleAdapter extends BaseQuickAdapter<ArticleModel.Article, B
     protected void convert(BaseViewHolder helper, ArticleModel.Article item) {
         //将每一个需要赋值的id和对应的数据绑定
         helper.setText(R.id.test_item_title, item.getTitle())
-                .setText(R.id.test_item_message, item.getContent());
-                //.setText( R.id.title_date,item.getDate().toString() );
+                .setText(R.id.test_item_message, item.getContent())
+                .setText(R.id.title_date, item.getDate())
+                .setText( R.id.title_author,"阅读量："+item.getCount().toString() );
     }
 }

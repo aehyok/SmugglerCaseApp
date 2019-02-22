@@ -20,17 +20,17 @@ public class ArticleModel {
     public static class Article
     {
 
-        public Article(Integer id,String title,String content,Date updateDate,Integer count){
+        public Article(Integer id,String title,String content,String updateDate,Integer count){
             this.Id=id;
             this.Title=title;
             this.Content=content;
-            this.UpdateDate=updateDate;
+            this.UpdateTime=updateDate;
             this.Count=count;
         }
         private Integer Id;
         private String Title;
         private String Content;
-        private Date UpdateDate;
+        private String UpdateTime;
         private Integer Count;
 
         public Integer getId(){return this.Id;}
@@ -49,9 +49,9 @@ public class ArticleModel {
 
         public void setCount(int count){this.Count=count;}
 
-        public Date getDate(){return this.UpdateDate;}
+        public String getDate(){return this.UpdateTime;}
 
-        public void setDate(Date updateDate){this.UpdateDate=updateDate;}
+        public void setDate(String updateDate){this.UpdateTime=updateDate;}
     }
 
 
