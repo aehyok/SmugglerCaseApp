@@ -92,7 +92,7 @@ public class ChatRecordAllAdapter extends BaseAdapter {
         } else {
             holder.chatMessageRecordTime.setVisibility(View.GONE);
         }
-        Picasso.with(context)
+        Picasso.get()
                 .load(R.drawable.ydsp)
                 .into(holder.chatMessageRecordImage);
         if(mList.get(i).getFrom().equals(toName)){

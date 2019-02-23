@@ -66,7 +66,7 @@ public class ChatRoomCodeActivity extends AppCompatActivity {
         chatRoomCodeImage.setLayoutParams(params);
         chatRoomCodeImage.setImageBitmap(getCode("sdfsdfsdf"));
         titleBarRightImage.setBackgroundResource(R.drawable.more);
-        Picasso.with(this).load(ChatDBHelper.getUserAvatar(personName)).into(chatRoomCodeAvatar);
+        Picasso.get().load(ChatDBHelper.getUserAvatar(personName)).into(chatRoomCodeAvatar);
         chatRoomCodeName.setText(group.getGroupName());
     }
     private Bitmap getCode(String groupId){

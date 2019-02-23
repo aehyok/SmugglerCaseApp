@@ -1,5 +1,8 @@
 package com.sinostar.assistant.net;
 
+import android.support.annotation.NonNull;
+
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.sinostar.assistant.bean.ApproveAgreeModel;
 import com.sinostar.assistant.bean.CaseInfoActionInfo;
@@ -17,11 +20,15 @@ import com.sinostar.assistant.bean.ObtainEvidenceBean;
 import com.sinostar.assistant.bean.ApproveAgreeSend;
 import com.sinostar.assistant.subscribers.MyObserver;
 import com.sinostar.assistant.bean.Apporove;
+import com.sinostar.assistant.utils.Constent;
 
 import org.json.JSONObject;
 
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -126,7 +133,12 @@ public class NetMethods {
         NetMethods(Net.getInstance().serviceProvider().getUploadImage(userId,caseId,params),observer);
     }
 
-    public static void  getToken(MyObserver<JsonObject> observer, Integer pageIndex,String url) {
-        NetMethods(Net.getInstance().serviceProvider(url).getToken(pageIndex),observer);
+    public static void  getToken(MyObserver<JsonObject> observer,Integer pageIndex,String url) {
+        NetMethods(Net.getInstance().serviceProvider(url).getToken( pageIndex ),observer);
+    }
+
+    public static void  getBlogToken(MyObserver<JsonArray> observer, String url) {
+        String access_token="Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlFMjcyMkFGM0IzRTFDNzU5RTI3NEFBRDI5NDFBNzg1MDlCMDc2RDAiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJuaWNpcnpzLUhIV2VKMHF0S1VHbmhRbXdkdEEifQ.eyJuYmYiOjE1NTA4ODIzODksImV4cCI6MTU1MDk2ODc4OSwiaXNzIjoiaHR0cDovL29wZW5hcGlfb2F1dGgtc2VydmVyIiwiYXVkIjpbImh0dHA6Ly9vcGVuYXBpX29hdXRoLXNlcnZlci9yZXNvdXJjZXMiLCJDbkJsb2dzQXBpIl0sImNsaWVudF9pZCI6IjE4N2Q1Zjk5LTdiODctNDkzZC04MzQ0LTQ5Zjc1MTQwZjY1MSIsInNjb3BlIjpbIkNuQmxvZ3NBcGkiXX0.wkk9iI8EdPTLPCNhaR_zCjRyHN73D8FxaT-cVqXlsAFCly-pGPr97wt_0XzEOs4pkB-2VT8tXCbnqOKr0gc0sutDOHM92UampV78gkWPZbUNoQfqWHTtUVOXrXvpH-Aa5eVQwJLrtf6vQDSsFFOHwTy1sWbELGYeVFAu2gR8AJLk-UycL4b6R3eY4KrQNcCXGtUoq9UgqaDWCO5CKra7wFu6DwClfZ23bUFiEJkMkXXGgUMelT4J1Tbiwo9Ah2ejcM2WUqxs22ess5pwWxI9iw5uRM9WBsP2R3aA27Yg4eRY4025I_RiMGOemddGCv2OSmLxHj-pTo1y9UjOWBj82w";
+        NetMethods(Net.getInstance().serviceProvider(url).getBlogToken(1,10,access_token),observer);
     }
 }

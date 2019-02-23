@@ -63,7 +63,7 @@ public class ChatRoomInfoAvatarAdapter extends BaseAdapter {
         }
 
         if(i<mList.size()){
-            Picasso.with(context)
+            Picasso.get()
                     .load( ChatDBHelper.getUserAvatar(mList.get(i)))
                     .resize(imageWidth,imageWidth)
                     .centerCrop()
@@ -72,13 +72,13 @@ public class ChatRoomInfoAvatarAdapter extends BaseAdapter {
 
         }else{
             if(i==mList.size()){
-                Picasso.with(context)
+                Picasso.get()
                         .load(R.drawable.group_add)
                         .resize(imageWidth,imageWidth)
                         .centerCrop()
                         .into(holder.imageItem);
             }else{
-                Picasso.with(context)
+                Picasso.get()
                         .load(R.drawable.group_delete)
                         .resize(imageWidth,imageWidth)
                         .centerCrop()

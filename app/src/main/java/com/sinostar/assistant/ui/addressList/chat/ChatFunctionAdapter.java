@@ -55,7 +55,7 @@ public class ChatFunctionAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         int height=(getScreenWidth(context)-dp2px(context,88))/4;
-        Picasso.with(context).load(image[i]).resize(height,height).centerCrop().into(holder.chatFunctionImage);
+        Picasso.get().load(image[i]).resize(height,height).centerCrop().into(holder.chatFunctionImage);
 //        holder.chatFunctionImage.setBackgroundResource(image[i]);
         holder.chatFunctionText.setText(text[i]);
         return view;

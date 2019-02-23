@@ -51,7 +51,7 @@ public class CreateChatRoomAvatarAdapter extends RecyclerView.Adapter<CreateChat
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         if(avatarList!=null&&avatarList.size()!=0){
-            Picasso.with(context)
+            Picasso.get()
                     .load((String) avatarList.get(position))
                     .transform(new CircleTransform(context))
                     .into(holder.imageItem);

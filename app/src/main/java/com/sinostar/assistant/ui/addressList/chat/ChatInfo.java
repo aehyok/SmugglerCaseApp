@@ -66,7 +66,7 @@ public class ChatInfo extends AppCompatActivity {
         }else{
             chatRoomBeQuiet.setRightTvDrawableRight(getResources().getDrawable(R.drawable.turn_off));
         }
-        Picasso.with(this)
+        Picasso.get()
                 .load(ChatDBHelper.getUserAvatar(personName))
                 .resize(DensityUtils.dp2px(this, 70), DensityUtils.dp2px(this, 70))
                 .transform(new CircleTransform(this))

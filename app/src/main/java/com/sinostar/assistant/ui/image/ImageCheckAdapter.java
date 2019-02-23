@@ -51,7 +51,7 @@ public class ImageCheckAdapter extends PagerAdapter {
             ImageView imageView=new ImageView(context);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             view=imageView;
-            Picasso.with(ApplicationUtil.getContext())
+            Picasso.get()
                     .load(image[position])
                     .into(imageView);
             container.addView(imageView);
@@ -60,7 +60,7 @@ public class ImageCheckAdapter extends PagerAdapter {
             view=photoView;
             String url = imageUrls.get(position);
 
-            Picasso.with(ApplicationUtil.getContext())
+            Picasso.get()
                     .load(url)
                     .into(photoView);
             container.addView(photoView);

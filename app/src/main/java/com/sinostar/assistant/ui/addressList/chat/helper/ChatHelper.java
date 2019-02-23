@@ -119,7 +119,7 @@ public class ChatHelper {
     public static void setPersonAvatar(Context context, String userId, ImageView imageView){
         String avatar=getAvatar(userId);
         if(avatar!=null&&!avatar.equals("")){
-            Picasso.with(context)
+            Picasso.get()
                     .load(avatar)
                     .transform(new CircleTransform(context))
                     .into(imageView);

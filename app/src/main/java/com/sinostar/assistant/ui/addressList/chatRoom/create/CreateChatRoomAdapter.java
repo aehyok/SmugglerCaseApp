@@ -79,7 +79,7 @@ public class CreateChatRoomAdapter extends BaseAdapter {
         }
         holder.listChildCheckbox.setVisibility(View.VISIBLE);
         holder.listChildName.setText(ChatDBHelper.getUserName(mList.get(i)));
-        Picasso.with(context)
+        Picasso.get()
                 .load(ChatDBHelper.getUserAvatar(mList.get(i)))
                 .transform(new CircleTransform(context))
                 .into(holder.listChildImage);

@@ -41,19 +41,19 @@ public class ImageSelectAdapter extends RecyclerView.Adapter <ImageSelectAdapter
     public void onBindViewHolder(ImageSelectAdapter.ViewHolder holder, int position) {
         int itemWidth =  ((getScreenWidth(context)- DensityUtils.dp2px(context,60))/ 3);
         if(mList.size()==0){
-            Picasso.with(context)
+            Picasso.get()
                     .load(R.drawable.add_image)
                     .resize(itemWidth,itemWidth)
                     .centerCrop()
                     .into(holder.imageView);
         }else if(position<mList.size()){
             String s="file://"+mList.get(position).path;
-            Picasso.with(context).load(s)
+            Picasso.get().load(s)
                       .resize(itemWidth,itemWidth)
                     .centerCrop().
                     into(holder.imageView);
         }else{
-            Picasso.with(context).load(R.drawable.add_image)
+            Picasso.get().load(R.drawable.add_image)
                     .resize(itemWidth,itemWidth)
                     .into(holder.imageView);
         }

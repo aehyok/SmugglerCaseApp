@@ -1,5 +1,6 @@
 package com.sinostar.assistant.net;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.sinostar.assistant.bean.Apporove;
 import com.sinostar.assistant.bean.ApproveAgreeModel;
@@ -298,5 +299,15 @@ public interface RetrofitService {
     @GET("/api/Blog/Article/{pageIndex}")
     Observable<JsonObject> getToken(@Path("pageIndex") Integer pageIndex);
 
-
+    /**
+     * 获取博客园access_token
+     * @param Authorization
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+     @GET("/api/NewsItems")
+    Observable<JsonArray> getBlogToken(@Query("pageIndex") Integer pageIndex,
+                                       @Query("pageSize") Integer pageSize,
+                                       @Header( "Authorization") String Authorization);
 }

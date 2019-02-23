@@ -119,10 +119,10 @@ public class LoginActivity extends BaseActivity {
 
         if(Constent.isSZ){
             s= new SpannableStringBuilder(getResources().getString(R.string.login_chebox_sz));
-            Picasso.with(context).load(R.drawable.login_image_sz).resize(getScreenWidth(context), height).centerCrop().into(loginTitleImage);
+            Picasso.get().load(R.drawable.login_image_sz).resize(getScreenWidth(context), height).centerCrop().into(loginTitleImage);
         }else{
             s= new SpannableStringBuilder(getResources().getString(R.string.login_chebox));
-            Picasso.with(context).load(R.drawable.login_image).resize(getScreenWidth(context), height).centerCrop().into(loginTitleImage);
+            Picasso.get().load(R.drawable.login_image).resize(getScreenWidth(context), height).centerCrop().into(loginTitleImage);
         }
 
         s.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.login_button_text)),

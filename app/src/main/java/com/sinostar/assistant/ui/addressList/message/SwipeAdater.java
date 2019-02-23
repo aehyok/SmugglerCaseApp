@@ -87,7 +87,7 @@ public class SwipeAdater extends RecyclerView.Adapter<SwipeAdater.ViewHolder> {
                     EMMessage message = mList.get(personName).getLastMessage();
                     if(message.getChatType()== EMMessage.ChatType.GroupChat){//判断是否是群聊
                         holder.chatMessageName.setText(ChatHelper.getGroupName(message.getTo()));
-                        Picasso.with(context)
+                        Picasso.get()
                                 .load(Constent.CHAT_GROUP_AVATAR)
                                 .into(holder.chatMessageAvatar);
                     }else{

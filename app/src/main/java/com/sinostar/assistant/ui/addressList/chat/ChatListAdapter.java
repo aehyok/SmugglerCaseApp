@@ -297,7 +297,7 @@ public class ChatListAdapter extends BaseAdapter {
                         fromViewHolder.chatFromImage.setVisibility(View.VISIBLE);
                         final EMImageMessageBody imageBody = (EMImageMessageBody) mList.get(i).getBody();
 
-                        Picasso.with(context).
+                        Picasso.get().
                                 load(imageBody.getThumbnailUrl())
                                 .transform(transformation)
                                 .transform(new RoundTransform(context))
@@ -349,7 +349,7 @@ public class ChatListAdapter extends BaseAdapter {
                     case LOCATION:  //收到定位消息
                         fromViewHolder.chatFromMapLayout.setVisibility(View.VISIBLE);
                         EMLocationMessageBody locationBody = (EMLocationMessageBody) mList.get(i).getBody();
-                        Picasso.with(context)
+                        Picasso.get()
                                 .load(chatHelper.getLocationUrl(i, (EMLocationMessageBody) mList.get(i).getBody()))
                                 .into(fromViewHolder.chatFromMapimage);
                         try {
@@ -371,7 +371,7 @@ public class ChatListAdapter extends BaseAdapter {
                         fromViewHolder.chatFromVideoLayout.setVisibility(View.VISIBLE);
                         final EMVideoMessageBody videoBody = (EMVideoMessageBody) mList.get(i).getBody();
 
-                            Picasso.with(context).
+                            Picasso.get().
                                     load(videoBody.getThumbnailUrl())
                                     .transform(transformation)
                                     .transform(new RoundTransform(context))
@@ -408,11 +408,11 @@ public class ChatListAdapter extends BaseAdapter {
                             fromViewHolder.chatFromFileState.setText("已下载");
                         }
                         if (chatHelper.getFileType(type) != 0) {
-                            Picasso.with(context)
+                            Picasso.get()
                                     .load(chatHelper.getFileType(type))
                                     .into(fromViewHolder.chatFromFileimage);
                         } else {
-                            Picasso.with(context)
+                            Picasso.get()
                                     .load(R.drawable.file_blank)
                                     .into(fromViewHolder.chatFromFileimage);
                         }
@@ -588,7 +588,7 @@ public class ChatListAdapter extends BaseAdapter {
                     case IMAGE:  //发出图片消息
                         toViewHolder.chatToImage.setVisibility(View.VISIBLE);
                         final EMImageMessageBody imageBody = (EMImageMessageBody) mList.get(i).getBody();
-                        Picasso.with(context).load("file://" + imageBody.getLocalUrl())
+                        Picasso.get().load("file://" + imageBody.getLocalUrl())
                                 .transform(transformation)
                                 .transform(new RoundTransform(context))
                                 .into(toViewHolder.chatToImage);
@@ -623,7 +623,7 @@ public class ChatListAdapter extends BaseAdapter {
                     case LOCATION:  //发出定位消息
                         toViewHolder.chatToMapLayout.setVisibility(View.VISIBLE);
                         EMLocationMessageBody locationBody = (EMLocationMessageBody) mList.get(i).getBody();
-                        Picasso.with(context)
+                        Picasso.get()
                                 .load(chatHelper.getLocationUrl(i, (EMLocationMessageBody) mList.get(i).getBody()))
                                 .into(toViewHolder.chatToMapImage);
 
@@ -645,13 +645,13 @@ public class ChatListAdapter extends BaseAdapter {
                         toViewHolder.chatToVideoLayout.setVisibility(View.VISIBLE);
                         final EMVideoMessageBody videoBody = (EMVideoMessageBody) mList.get(i).getBody();
                         if(videoBody.getThumbnailUrl()!=null&&!videoBody.getThumbnailUrl().equals("")){
-                           Picasso.with(context)
+                           Picasso.get()
                                    .load(videoBody.getThumbnailUrl())
                                    .transform(transformation)
                                    .transform(new RoundTransform(context))
                                    .into(toViewHolder.chatToVideoImage);
                         }else{
-                            Picasso.with(context)
+                            Picasso.get()
                                     .load(videoBody.getLocalThumb())
                                     .transform(transformation)
                                     .transform(new RoundTransform(context))
@@ -682,11 +682,11 @@ public class ChatListAdapter extends BaseAdapter {
                         }
                         String type = fileBody.getFileName().substring(fileBody.getFileName().lastIndexOf(".") + 1);
                         if (chatHelper.getFileType(type) != 0) {
-                            Picasso.with(context)
+                            Picasso.get()
                                     .load(chatHelper.getFileType(type))
                                     .into(toViewHolder.chatToFileImage);
                         } else {
-                            Picasso.with(context)
+                            Picasso.get()
                                     .load(R.drawable.file_blank)
                                     .into(toViewHolder.chatToFileImage);
                         }

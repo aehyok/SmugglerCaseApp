@@ -134,7 +134,7 @@ public class VideoFragment extends Fragment  {
                Bitmap bitmap = media.getFrameAtTime();
                videoImageView.setImageBitmap(bitmap);
            }else{
-               Picasso.with(getActivity())
+               Picasso.get()
                        .load(videoBody.getThumbnailUrl())
                        .into(videoImageView);
            }
@@ -149,12 +149,12 @@ public class VideoFragment extends Fragment  {
 
                 if(message.getFrom().equals(personName)){
                     image=imageBody.getThumbnailUrl();
-                    Picasso.with(getActivity())
+                    Picasso.get()
                             .load(image)
                             .into(videoPhotoview);
                 }else{
                     image=imageBody.getLocalUrl();
-                    Picasso.with(getActivity())
+                    Picasso.get()
                             .load("file://"+image)
                             .into(videoPhotoview);
                 }
@@ -213,7 +213,7 @@ public class VideoFragment extends Fragment  {
                     @Override
                     public void run() {
                         if(message.getType()== EMMessage.Type.IMAGE){
-                            Picasso.with(getActivity())
+                            Picasso.get()
                                     .load(imageBody.getLocalUrl())
                                     .into(videoPhotoview);
                         }else{
