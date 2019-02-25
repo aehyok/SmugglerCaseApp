@@ -82,15 +82,15 @@ public class BlogMessageActivity extends AppCompatActivity {
 
     private void refreshView() {
         //1,加载空布局文件，便于第五步适配器在没有数据的时候加载
-        View emptyView = View.inflate(this, R.layout.empty_view, null);
+        //View emptyView = View.inflate(this, R.layout.empty_view, null);
         //2，设置LayoutManager,LinearLayoutManager表示竖直向下
         rvTest.setLayoutManager(new LinearLayoutManager(this));
         //3，初始化一个无数据的适配器
         mTestAdapter = new BlogArticleAdapter();
         //4，绑定recyclerView和适配器
-        rvTest.setAdapter(mTestAdapter);
+        //rvTest.setAdapter(mTestAdapter);
         //5，给recyclerView设置空布局
-        mTestAdapter.setEmptyView(emptyView);
+        //mTestAdapter.setEmptyView(emptyView);
         //6，给recyclerView的每一个子列表添加点击事件
         mTestAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

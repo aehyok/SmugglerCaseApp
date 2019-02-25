@@ -26,6 +26,9 @@ import com.sinostar.assistant.subscribers.MyObserver;
 import com.sinostar.assistant.subscribers.ObserverOnNextListener;
 
 import java.lang.reflect.TypeVariable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -39,6 +42,8 @@ public class BlogNewsActivity extends AppCompatActivity {
     SmartRefreshLayout srlTest;
     @BindView(R.id.rv_test)
     RecyclerView rvTest;
+    List<BlogNewsModel> NewsModel=new ArrayList<BlogNewsModel>();
+    private  Integer blogNewsPageIndex=1;
 
     private BlogNewsAdapter mTestAdapter;
     @Override
@@ -50,13 +55,13 @@ public class BlogNewsActivity extends AppCompatActivity {
         //TextView文本框赋值
         titleBarText.setText("Blog News");
         refreshView();
-        //getNewsData(1);//获取第一页首页数据
         smartRefreshView();
+        getNewsData(blogNewsPageIndex);//获取第一页首页数据
     }
 
     private void refreshView() {
         //1,加载空布局文件，便于第五步适配器在没有数据的时候加载
-        View emptyView = View.inflate(this, R.layout.empty_view, null);
+        //View emptyView = View.inflate(this, R.layout.empty_view, null);
         //2，设置LayoutManager,LinearLayoutManager表示竖直向下
         rvTest.setLayoutManager(new LinearLayoutManager(this));
         //3，初始化一个无数据的适配器
@@ -64,7 +69,7 @@ public class BlogNewsActivity extends AppCompatActivity {
         //4，绑定recyclerView和适配器
         rvTest.setAdapter(mTestAdapter);
         //5，给recyclerView设置空布局
-        mTestAdapter.setEmptyView(emptyView);
+        //mTestAdapter.setEmptyView(emptyView);
         //6，给recyclerView的每一个子列表添加点击事件
         mTestAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -81,7 +86,7 @@ public class BlogNewsActivity extends AppCompatActivity {
             @Override
             public void onNext(final JsonArray result) {
                 Gson gson = new Gson();
-                List<BlogNewsModel> list;// = gson.fromJson( result, new TypeToken<List<BlogNewsModel>>() {}.getType());
+                List<BlogNewsModel> list=new ArrayList<BlogNewsModel>();// = gson.fromJson( result, new TypeToken<List<BlogNewsModel>>() {}.getType());
                 try{
                     list = gson.fromJson( result, new TypeToken<List<BlogNewsModel>>() {}.getType());
                 }
@@ -89,8 +94,16 @@ public class BlogNewsActivity extends AppCompatActivity {
                 {
                     throw e;
                 }
-
-                mTestAdapter.setNewData( list );
+                NewsModel.addAll( list );
+//                Collections.sort(NewsModel, new Comparator<BlogNewsModel>() {
+//
+//                    @Override
+//                    public int compare(BlogNewsModel o1, BlogNewsModel o2) {
+//                        int flag = o1.getDateAdded().compareTo(o2.getDateAdded());
+//                        return flag;
+//                    }
+//                });
+                mTestAdapter.setNewData( NewsModel );
             }
 
             @Override
@@ -98,7 +111,7 @@ public class BlogNewsActivity extends AppCompatActivity {
             }
         };
 
-            NetMethods.getBlogToken(new MyObserver<JsonArray>(BlogNewsActivity.this, listener),"http://api.cnblogs.com" );
+            NetMethods.getBlogToken(new MyObserver<JsonArray>(BlogNewsActivity.this, listener),"http://api.cnblogs.com",pageIndex );
         }
         catch (Throwable e)
         {
@@ -124,14 +137,15 @@ public class BlogNewsActivity extends AppCompatActivity {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 //下拉刷新,一般添加调用接口获取数据的方法
-                getNewsData(2);
+                getNewsData(1);
                 refreshLayout.finishRefresh();
             }
 
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 //上拉加载，一般添加调用接口获取更多数据的方法
-                getNewsData(3);
+                blogNewsPageIndex=blogNewsPageIndex+1;
+                getNewsData(blogNewsPageIndex);
                 refreshLayout.finishLoadMoreWithNoMoreData();
             }
         });

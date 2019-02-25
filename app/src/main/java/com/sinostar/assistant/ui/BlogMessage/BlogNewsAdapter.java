@@ -13,18 +13,9 @@ import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.sinostar.assistant.R;
-import com.sinostar.assistant.Utils.ImageUtils;
 import com.sinostar.assistant.bean.BlogNewsModel;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import butterknife.BindView;
 
 public class BlogNewsAdapter extends BaseQuickAdapter<BlogNewsModel, BaseViewHolder> {
     private Target loadtarget=null;
@@ -43,7 +34,6 @@ public class BlogNewsAdapter extends BaseQuickAdapter<BlogNewsModel, BaseViewHol
                .setText( R.id.title_date, item.getDateAdded() )
                .setText( R.id.title_author, "阅读量：" + item.getViewCount() );
                 //.setImageBitmap(R.id.login_title_image,getImageBitmap(item.getTopicIcon()));
-
         try
         {
             Picasso.get().load( item.getTopicIcon() ).into( imageView );
