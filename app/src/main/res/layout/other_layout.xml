@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/progressBar"
             android:layout_marginTop="5dp"
-            android:text="加载中..." />
+            android:text="Loading..." />
     </RelativeLayout>
 
     <RelativeLayout

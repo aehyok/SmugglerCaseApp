@@ -1,5 +1,6 @@
 package com.sinostar.assistant.ui.BlogMessage;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.sinostar.assistant.bean.ObtainEvidenceBean;
 import com.sinostar.assistant.net.NetMethods;
 import com.sinostar.assistant.subscribers.MyObserver;
 import com.sinostar.assistant.subscribers.ObserverOnNextListener;
+import com.sinostar.assistant.ui.mobile.info.ApproveInfo;
 
 import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
@@ -76,6 +78,12 @@ public class BlogNewsActivity extends AppCompatActivity {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Toast.makeText(BlogNewsActivity.this, "我点击了第" + position + "个子view",
                         Toast.LENGTH_SHORT).show();
+                String itemId;
+                itemId = NewsModel.get(position).getId();
+
+                Intent intent = new Intent(BlogNewsActivity.this, BlogNewsContentActivity.class);
+                intent.putExtra("Id", itemId);
+                startActivity(intent);
             }
         });
     }

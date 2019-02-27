@@ -38,7 +38,7 @@ public class BlogMessageActivity extends AppCompatActivity {
 
     private  ArticleModel model=new ArticleModel();
     String cls;
-    private BlogArticleAdapter mTestAdapter;
+    private BlogArticleAdapter mTestAdapter=new BlogArticleAdapter();
     private ArrayList<ArticleModel.Article> mTestList=new ArrayList<ArticleModel.Article>(  );
 
     @BindView(R.id.rv_test)
@@ -57,11 +57,11 @@ public class BlogMessageActivity extends AppCompatActivity {
 
         //TextView文本框赋值
         titleBarText.setText("Blog Message");
-
         //getData( 1 );
+        getBlogData( 1 );
         refreshView();
         smartRefreshView();
-        getBlogData( 1 );
+
     }
 
     public void getBlogData(Integer index) {
@@ -87,7 +87,7 @@ public class BlogMessageActivity extends AppCompatActivity {
         //2，设置LayoutManager,LinearLayoutManager表示竖直向下
         rvTest.setLayoutManager(new LinearLayoutManager(this));
         //3，初始化一个无数据的适配器
-        mTestAdapter = new BlogArticleAdapter();
+
         //4，绑定recyclerView和适配器
         rvTest.setAdapter(mTestAdapter);
         //5，给recyclerView设置空布局

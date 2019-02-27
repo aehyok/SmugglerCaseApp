@@ -34,7 +34,7 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/title_bar_back_image"
             android:gravity="center"
-            android:text="返回"
+            android:text="Back"
             android:textColor="@color/white"
             android:textSize="15sp" />
 

@@ -12,11 +12,11 @@
     <string name="wait_approve">待审批</string>
     <string name="finish_approve">已审批</string>
     <string name="report_approve">报上级审批</string>
-    <string name="mobile_approve_first">文书审批</string>
-    <string name="mobile_approve_second">回退审批</string>
-    <string name="mobile_approve_third">申领审批</string>
-    <string name="mobile_approve_fourth">授权审批</string>
-    <string name="mobile_approve_title_text">我的审批</string>
+    <string name="mobile_approve_first">Document</string>
+    <string name="mobile_approve_second">Regression</string>
+    <string name="mobile_approve_third">Apply</string>
+    <string name="mobile_approve_fourth">Authorization</string>
+    <string name="mobile_approve_title_text">My Approval</string>
     <string name="case_assistant_title_text">办案助手</string>
     <string name="case_assistant_first">通知公告</string>
     <string name="case_assistant_second">行政助手</string>

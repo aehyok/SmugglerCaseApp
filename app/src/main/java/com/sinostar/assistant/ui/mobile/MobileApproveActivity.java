@@ -56,10 +56,10 @@ public class MobileApproveActivity extends AppCompatActivity {
     RelativeLayout bottomBarFourthLaout;
 
     private Fragment currentFragment;
-    private DocumentApproveFragment documentApproveFragment;
-    private LinkBackFragment linkBackFragment;
-    private ApplyApproveFragment ApplyApproveFragment;
-    private AuthorizationApproveFragment authorizationApproveFragment;
+    private DocumentApproveFragment documentApproveFragment;                 //文书审批页面
+    private LinkBackFragment linkBackFragment;                               //回退审批页面
+    private ApplyApproveFragment ApplyApproveFragment;                       //空白文书申领页面
+    private AuthorizationApproveFragment authorizationApproveFragment;       //授权审批页面
     private FragmentUtil fragmentUtil;
     ApproveAgree approveAgreeModel;
     private int image1[] = {R.drawable.wssp_1, R.drawable.hjhtsp_1, R.drawable.wsslsp_1, R.drawable.sqsp_1};

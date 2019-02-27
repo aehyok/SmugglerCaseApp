@@ -95,7 +95,6 @@ public class WaitApproveFragment extends Fragment {
                 }, 500);
             }
         });
-
     }
 
 

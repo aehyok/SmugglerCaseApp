@@ -18,20 +18,20 @@
             android:id="@+id/docuement_tab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="待审批"
+            android:text="Wait"
         />
 
         <android.support.design.widget.TabItem
             android:id="@+id/docuement_tab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="已审批"
+            android:text="Approved"
         />
         <android.support.design.widget.TabItem
             android:id="@+id/docuement_tab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="报上级审批"
+            android:text="Superior"
             />
     </android.support.design.widget.TabLayout>
 
