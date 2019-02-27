@@ -58,7 +58,7 @@ public class BlogMessageActivity extends AppCompatActivity {
         //TextView文本框赋值
         titleBarText.setText("Blog Message");
 
-        getData( 1 );
+        //getData( 1 );
         refreshView();
         smartRefreshView();
         getBlogData( 1 );
@@ -70,6 +70,7 @@ public class BlogMessageActivity extends AppCompatActivity {
             public void onNext(final JsonObject result) {
                 Gson gson = new Gson();
                 model=gson.fromJson(result.toString(), ArticleModel.class);
+                mTestAdapter.setNewData( model.getArticleList() );
             }
 
             @Override
@@ -88,7 +89,7 @@ public class BlogMessageActivity extends AppCompatActivity {
         //3，初始化一个无数据的适配器
         mTestAdapter = new BlogArticleAdapter();
         //4，绑定recyclerView和适配器
-        //rvTest.setAdapter(mTestAdapter);
+        rvTest.setAdapter(mTestAdapter);
         //5，给recyclerView设置空布局
         //mTestAdapter.setEmptyView(emptyView);
         //6，给recyclerView的每一个子列表添加点击事件
