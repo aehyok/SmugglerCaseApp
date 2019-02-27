@@ -76,10 +76,12 @@ public class BlogNewsActivity extends AppCompatActivity {
         mTestAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(BlogNewsActivity.this, "我点击了第" + position + "个子view",
-                        Toast.LENGTH_SHORT).show();
                 String itemId;
                 itemId = NewsModel.get(position).getId();
+
+                Toast.makeText(BlogNewsActivity.this,  itemId,
+                        Toast.LENGTH_SHORT).show();
+
 
                 Intent intent = new Intent(BlogNewsActivity.this, BlogNewsContentActivity.class);
                 intent.putExtra("Id", itemId);

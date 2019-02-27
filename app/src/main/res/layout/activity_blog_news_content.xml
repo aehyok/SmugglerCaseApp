@@ -10,4 +10,11 @@
         layout="@layout/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"
+        android:defaultFocusHighlightEnabled="true">
+
+    </WebView>
 </android.support.constraint.ConstraintLayout>

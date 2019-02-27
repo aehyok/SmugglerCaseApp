@@ -74,8 +74,6 @@ public class DocumentInfo extends AppCompatActivity {
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(Constent.PDF_URL+docId);
-
-
     }
 
 
