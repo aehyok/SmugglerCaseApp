@@ -5,11 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.BlogMessage.BlogRemindActivity">
-    <ImageView
-        android:id="@+id/login_title_images"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:scaleType="centerCrop"
-        android:gravity="left"
-        android:src="@drawable/blog"/>
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--<include-->
+        <!--android:id="@+id/bottom_bar"-->
+        <!--layout="@layout/bottom_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true" />-->
+
+
+    <RelativeLayout
+        android:id="@+id/mobile_approve_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        android:layout_marginBottom="2dp"
+        android:layout_above="@+id/bottom_bar"
+        >
+
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
