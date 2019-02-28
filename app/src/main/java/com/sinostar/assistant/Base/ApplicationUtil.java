@@ -69,6 +69,12 @@ public class ApplicationUtil extends Application {
     private static Map<String,Boolean> isSetTop; //是否置顶
     private static Map<String,Boolean> isBeQuiet; //是否请勿打扰
 
+    private static String AccessToken;       //用户访问Token
+
+    public static String getAccessToken(){return AccessToken;}
+
+    public static void setAccessToken(String accessToken){AccessToken=accessToken;}
+
 
     public static Map<String, Boolean> getIsSetTop() {
         return isSetTop;

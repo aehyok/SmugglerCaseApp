@@ -21,11 +21,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.sinostar.assistant.R;
 import com.sinostar.assistant.base.ApplicationUtil;
 import com.sinostar.assistant.base.BaseActivity;
 import com.sinostar.assistant.base.OnEditFocusChange;
+import com.sinostar.assistant.bean.ArticleModel;
 import com.sinostar.assistant.bean.Login;
 import com.sinostar.assistant.net.NetMethods;
 import com.sinostar.assistant.subscribers.MyObserver;
@@ -36,6 +38,9 @@ import com.sinostar.assistant.utils.Constent;
 import com.sinostar.assistant.utils.LogUtil;
 import com.sinostar.assistant.utils.ToastUtil;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -161,6 +166,26 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
+    public void getToken()
+    {
+
+        ObserverOnNextListener listener = new ObserverOnNextListener<JsonObject>() {
+            @Override
+            public void onNext(final JsonObject jsonResult){
+               ApplicationUtil.setAccessToken("Bearer " +jsonResult.get("access_token").toString());
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Gson gson=new Gson();
+            }
+        };
+
+        NetMethods.getBlogToken(new MyObserver<JsonObject>(LoginActivity.this, listener),"https://oauth.cnblogs.com");
+    }
+
+
+
     private void login() {
         userName = loginUesrName.getText().toString();
         userPassport = loginUesrPassport.getText().toString();
@@ -187,6 +212,7 @@ public class LoginActivity extends BaseActivity {
                                 ApplicationUtil.setUserId(result.getData().getUserId() + "");
                                 ApplicationUtil.setWaterMarkText(result.getData().getUserName());
                                 Intent intent = null;
+                                getToken();
                                 try {
                                     intent = new Intent(context, Class.forName(cls));
                                 } catch (ClassNotFoundException e) {

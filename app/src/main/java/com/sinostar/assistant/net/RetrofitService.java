@@ -27,6 +27,9 @@ import java.util.Map;
 import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
@@ -34,6 +37,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PartMap;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 /**
  * 网络接口封装
@@ -299,6 +303,15 @@ public interface RetrofitService {
     @GET("/api/Blog/Article/{pageIndex}")
     Observable<JsonObject> getToken(@Path("pageIndex") Integer pageIndex);
 
+
+    /**
+     * 获取博客园（文书审批）
+     * @param tokenParameters
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("/connect/token")
+    Observable<JsonObject> getBlogToken(@FieldMap Map<String, String> tokenParameters);
     /**
      * 获取博客园access_token
      * @param Authorization
