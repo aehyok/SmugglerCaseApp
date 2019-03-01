@@ -165,7 +165,7 @@ public class BlogHomeFragment extends Fragment {
 
                 }
             };
-            NetMethods.getBlogToken(new MyObserver<JsonArray>(getActivity(), listener),"http://api.cnblogs.com",1);
+            NetMethods.getHomeBlog(new MyObserver<JsonArray>(getActivity(), listener),"http://api.cnblogs.com",1,10);
 
         }
     }

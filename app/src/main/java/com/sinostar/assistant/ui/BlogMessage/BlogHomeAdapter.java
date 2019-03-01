@@ -44,7 +44,6 @@ public class BlogHomeAdapter extends BaseAdapter {
         this.mList = list;
         this.type = type;
         notifyDataSetChanged();
-
     }
 
     @Override

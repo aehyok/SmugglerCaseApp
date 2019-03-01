@@ -321,7 +321,7 @@ public interface RetrofitService {
      * @return
      */
      @GET("/api/NewsItems")
-    Observable<JsonArray> getBlogToken(@Query("pageIndex") Integer pageIndex,
+    Observable<JsonArray> getBlogNews(@Query("pageIndex") Integer pageIndex,
                                        @Query("pageSize") Integer pageSize,
                                        @Header( "Authorization") String Authorization);
 

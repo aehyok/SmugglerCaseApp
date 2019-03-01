@@ -139,9 +139,8 @@ public class NetMethods {
         NetMethods(Net.getInstance().serviceProvider(url).getBlogToken(tokenParameter ),observer);
     }
 
-    public static void  getBlogToken(MyObserver<JsonArray> observer, String url,Integer pageIndex) {
-        String access_token="Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlFMjcyMkFGM0IzRTFDNzU5RTI3NEFBRDI5NDFBNzg1MDlCMDc2RDAiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJuaWNpcnpzLUhIV2VKMHF0S1VHbmhRbXdkdEEifQ.eyJuYmYiOjE1NTEyMzI1NjcsImV4cCI6MTU1MTMxODk2NywiaXNzIjoiaHR0cDovL29wZW5hcGlfb2F1dGgtc2VydmVyIiwiYXVkIjpbImh0dHA6Ly9vcGVuYXBpX29hdXRoLXNlcnZlci9yZXNvdXJjZXMiLCJDbkJsb2dzQXBpIl0sImNsaWVudF9pZCI6IjE4N2Q1Zjk5LTdiODctNDkzZC04MzQ0LTQ5Zjc1MTQwZjY1MSIsInNjb3BlIjpbIkNuQmxvZ3NBcGkiXX0.uoOuiFc1RpI7QANJN2vLUT5zK2mxh2MqrhzK5esYBtN3s9m8v2YhliOoifWb7WCx4Tv7Up3-jZ8h0BX5Q0pBMee8DzLyjpJ129y8wfpbcvhdeib_dksMu30MJtmTDUMMysE1iyBE4FwoV99pNr4WvVCn0NI506EmrsbbZUfV8oBa7eX_xNvcNi_CUC1_wkeDbMM7xK1vLUa9B28WQS9F27K_iuDGXwx7SXfhVZwEDUEZ4482AsYPUncSa-Ial6G5M_7QVv-sARn_8ZK2fuy5dUY82a3eTMZ3W__PFvuRPwlEk3R-BljSPnbuNDEO9g0_7dKfArE5HScQhokRFeQgzg";
-        NetMethods(Net.getInstance().serviceProvider(url).getBlogToken(pageIndex,10,access_token),observer);
+    public static void  getBlogNews(MyObserver<JsonArray> observer, String url,Integer pageIndex) {
+        NetMethods(Net.getInstance().serviceProvider(url).getBlogNews(pageIndex,10,ApplicationUtil.getAccessToken()),observer);
     }
 
     public static void getHomeBlog(MyObserver<JsonArray> observer,String url,Integer pageIndex,Integer pageSize)
