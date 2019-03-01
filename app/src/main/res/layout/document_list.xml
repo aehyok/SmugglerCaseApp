@@ -110,7 +110,7 @@
         android:id="@+id/approve_list_button"
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:text="审批"
+        android:text="Details"
         android:gravity="center"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"

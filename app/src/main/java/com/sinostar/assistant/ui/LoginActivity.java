@@ -93,6 +93,7 @@ public class LoginActivity extends BaseActivity {
         context = LoginActivity.this;
         init();
         //测试用
+        getToken();
         loginUesrName.setText("wanghaiwen");
         loginUesrPassport.setText("wanghaiwen");
         loginUesrPassport.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -172,7 +173,14 @@ public class LoginActivity extends BaseActivity {
         ObserverOnNextListener listener = new ObserverOnNextListener<JsonObject>() {
             @Override
             public void onNext(final JsonObject jsonResult){
-               ApplicationUtil.setAccessToken("Bearer " +jsonResult.get("access_token").toString());
+                String type="Bearer";
+                String access_token=jsonResult.get("access_token").getAsString();
+                StringBuffer sb = new StringBuffer();
+                sb.append(type);
+                sb.append(" ");//空格
+                sb.append(access_token);
+                LogUtil.d("登陆结果", sb.toString());
+               ApplicationUtil.setAccessToken(sb.toString());
             }
 
             @Override
@@ -212,7 +220,6 @@ public class LoginActivity extends BaseActivity {
                                 ApplicationUtil.setUserId(result.getData().getUserId() + "");
                                 ApplicationUtil.setWaterMarkText(result.getData().getUserName());
                                 Intent intent = null;
-                                getToken();
                                 try {
                                     intent = new Intent(context, Class.forName(cls));
                                 } catch (ClassNotFoundException e) {

@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.sinostar.assistant.bean.Apporove;
 import com.sinostar.assistant.bean.ApproveAgreeModel;
+import com.sinostar.assistant.bean.BlogNewsModel;
 import com.sinostar.assistant.bean.CaseInfoActionInfo;
 import com.sinostar.assistant.bean.CaseLinkCase;
 import com.sinostar.assistant.bean.CaseLinkAction;
@@ -323,4 +324,9 @@ public interface RetrofitService {
     Observable<JsonArray> getBlogToken(@Query("pageIndex") Integer pageIndex,
                                        @Query("pageSize") Integer pageSize,
                                        @Header( "Authorization") String Authorization);
+
+     @GET("/api/blogposts/@sitehome")
+    Observable<JsonArray> getHomeBlog(@Query("pageIndex") Integer pageIndex,
+                                                @Query("pageSize") Integer pageSize,
+                                                @Header( "Authorization") String Authorization);
 }

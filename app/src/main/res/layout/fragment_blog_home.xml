@@ -1,13 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.BlogMessage.BlogHomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.BlogMessage.BlogHomeAdapter">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--<include-->
+        <!--android:id="@+id/other_layout"-->
+        <!--layout="@layout/other_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--/>-->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_below="@+id/other_layout"
+        app:srlEnableOverScrollDrag="true"
+        >
+        <ListView
+            android:id="@+id/homeblog_base_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:divider="@color/background"
+            android:dividerHeight="8dp"
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>
