@@ -29,6 +29,7 @@ import com.sinostar.assistant.ui.BlogMessage.BlogMessageActivity;
 import com.sinostar.assistant.ui.BlogMessage.BlogNewsActivity;
 import com.sinostar.assistant.ui.BlogMessage.BlogRemindActivity;
 import com.sinostar.assistant.ui.HMSPushHelper;
+import com.sinostar.assistant.ui.ImagePicker.ImagePickerMainActivity;
 import com.sinostar.assistant.ui.LoginActivity;
 import com.sinostar.assistant.ui.addressList.AdressList;
 import com.sinostar.assistant.ui.addressList.ChatLogin;
@@ -60,7 +61,7 @@ public class HomeActivity extends BaseActivity {
     HomeGridViewAdapter homeGridViewAdapter;
     AppCompatActivity context;
     List<String> list = new ArrayList<>();
-    String[] homeText = {"Blog Message", "Assistant", "Blog Remind", "Blog Manager", "Gallery", "Approval", "Query", "Contacts"};
+    String[] homeText = {"Blog Message", "Assistant", "Blog Remind", "Blog Manager", "Gallery", "Approval", "ImagePicker", "Contacts"};
     int[] homeImage = {R.drawable.tztg, R.drawable.bazs, R.drawable.yjts,
             R.drawable.zfda, R.drawable.xcqz, R.drawable.ydsp, R.drawable.sjcx, R.drawable.txl};
     String[] homeTextSZ = {"通知公告", "预警提示", "现场取证", "移动审批", "数据查询", "通讯录"};
@@ -134,7 +135,7 @@ public class HomeActivity extends BaseActivity {
                             isLogin(MobileApproveActivity.class);
                             break;
                         case 4:  //数据查询
-                            isLogin(DataQuery.class);
+                            isLogin(ImagePickerMainActivity.class);
                             break;
                         case 5: //通讯录
 //                    isLogin(AdressList.class);
@@ -163,7 +164,7 @@ public class HomeActivity extends BaseActivity {
                             isLogin(MobileApproveActivity.class);
                             break;
                         case 6:  //数据查询
-                            isLogin(DataQuery.class);
+                            isLogin(ImagePickerMainActivity.class);
                             break;
                         case 7: //通讯录
 //                    isLogin(AdressList.class);
