@@ -45,6 +45,9 @@ public class BlogHomeFragment extends Fragment {
     ListView blogListView;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
+    @BindView(R.id.progress_layout)
+    RelativeLayout progressLayout;
+
     Unbinder unbinder;
     private int currentIndex=1;
     private  BlogHomeAdapter blogHomeAdapter;
@@ -121,6 +124,7 @@ public class BlogHomeFragment extends Fragment {
                     com.sinostar.assistant.utils.LogUtil.d( "待审批列表结果", gson.toJson( result ) );
                     blogHomeAdapter.notifyDataSetChanged();
                     blogHomeAdapter.getData( list, 1 );
+                    progressLayout.setVisibility(View.GONE);
                 }
 
                 @Override

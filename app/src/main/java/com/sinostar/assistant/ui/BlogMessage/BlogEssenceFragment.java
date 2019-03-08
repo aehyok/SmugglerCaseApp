@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -40,6 +41,9 @@ public class BlogEssenceFragment extends Fragment {
     ListView essenceListView;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
+    @BindView(R.id.progress_layout)
+    RelativeLayout progressLayout;
+
     Gson gson;
     private Integer currentIndex=1;
     private  BlogEssenceAdapter blogEssenceAdapter;
@@ -107,6 +111,7 @@ public class BlogEssenceFragment extends Fragment {
                     com.sinostar.assistant.utils.LogUtil.d( "待审批列表结果", gson.toJson( result ) );
                     blogEssenceAdapter.notifyDataSetChanged();
                     blogEssenceAdapter.getData( list, 1 );
+                    progressLayout.setVisibility(View.GONE);
                 }
 
                 @Override

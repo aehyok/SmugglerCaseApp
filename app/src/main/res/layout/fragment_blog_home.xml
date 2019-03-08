@@ -5,12 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.BlogMessage.BlogHomeAdapter">
 
-    <!--<include-->
-        <!--android:id="@+id/other_layout"-->
-        <!--layout="@layout/other_layout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--/>-->
+    <include
+        android:id="@+id/other_layout"
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"

@@ -4,7 +4,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.BlogMessage.BlogCandidateFragment">
-
+    <include
+        android:id="@+id/other_layout"
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <!-- TODO: Update blank fragment layout -->
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
