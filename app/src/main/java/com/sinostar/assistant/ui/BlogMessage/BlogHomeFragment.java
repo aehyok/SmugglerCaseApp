@@ -18,6 +18,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.sinostar.assistant.R;
 import com.sinostar.assistant.base.ApplicationUtil;
@@ -44,11 +45,8 @@ public class BlogHomeFragment extends Fragment {
     ListView blogListView;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
-
     Unbinder unbinder;
-    Gson gson;
-
-
+    private int currentIndex=1;
     private  BlogHomeAdapter blogHomeAdapter;
     private com.sinostar.assistant.utils.FragmentUtil fragmentUtil;
     @Override
@@ -62,9 +60,10 @@ public class BlogHomeFragment extends Fragment {
         blogHomeAdapter = new BlogHomeAdapter(getActivity());
         blogListView.setAdapter(blogHomeAdapter);
         refreshLayout.setEnableLoadMore(true);
-        gson = new Gson();
+        refreshLayout.setEnableRefresh(true);
         getData();
         refreshData();
+        loadMoreData();
         initListener();
         return view;
     }
@@ -84,16 +83,23 @@ public class BlogHomeFragment extends Fragment {
 
 
     }
+    private void loadMoreData(){
+        refreshLayout.setOnLoadMoreListener( new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull final RefreshLayout refreshLayout) {
+                currentIndex+=1;
+                getData();
+                refreshLayout.finishLoadMore();
+            }
+        } );
+    }
+
     private void refreshData() {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                new Handler().postDelayed( new Runnable() {
-                    @Override
-                    public void run() {
-                        getData();
-                    }
-                }, 500);
+            public void onRefresh(@NonNull final RefreshLayout refreshLayout) {
+                getData();
+                refreshLayout.finishRefresh();
             }
         });
     }
@@ -115,8 +121,8 @@ public class BlogHomeFragment extends Fragment {
                     }.getType() );
 
                     com.sinostar.assistant.utils.LogUtil.d( "待审批列表结果", gson.toJson( result ) );
+                    blogHomeAdapter.notifyDataSetChanged();
                     blogHomeAdapter.getData( list, 1 );
-                    refreshLayout.finishRefresh();
                 }
 
                 @Override
@@ -124,7 +130,7 @@ public class BlogHomeFragment extends Fragment {
 
                 }
             };
-            NetMethods.getHomeBlog(new MyObserver<JsonArray>(getActivity(), listener),"http://api.cnblogs.com",1,10);
+            NetMethods.getHomeBlog(new MyObserver<JsonArray>(getActivity(), listener),"https://api.cnblogs.com",1,10*currentIndex);
         }
     }
 }
