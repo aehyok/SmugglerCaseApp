@@ -79,8 +79,8 @@ public class BlogNewsActivity extends AppCompatActivity {
                 String itemId;
                 itemId = NewsModel.get(position).getId();
 
-                Toast.makeText(BlogNewsActivity.this,  itemId,
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(BlogNewsActivity.this,  itemId,
+//                        Toast.LENGTH_SHORT).show();
 
 
                 Intent intent = new Intent(BlogNewsActivity.this, BlogNewsContentActivity.class);

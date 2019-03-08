@@ -15,6 +15,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.just.agentweb.AgentWeb;
@@ -34,8 +35,9 @@ public class BlogNewsContentActivity extends AppCompatActivity {
     WebView webView;
     @BindView(R.id.progressbar)
     ProgressBar progressbar;
+    @BindView( R.id.progress_layout )
+    RelativeLayout relativeLayout;
 
-    protected AgentWeb mAgentWeb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -67,6 +69,7 @@ public class BlogNewsContentActivity extends AppCompatActivity {
         //webView.loadUrl("http://39.104.26.38:8787/Blog/preview?id=" + newsId);
         String url="https://news.cnblogs.com/n/"+newsId+"/";
         webView.loadUrl( url );
+        relativeLayout.setVisibility( View.GONE );
     }
 
 

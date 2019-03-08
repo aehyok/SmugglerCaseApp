@@ -11,6 +11,13 @@
         layout="@layout/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <include
+        android:id="@+id/other_layout"
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
     <ProgressBar
         android:id="@+id/progressbar"
         style="@android:style/Widget.ProgressBar.Horizontal"

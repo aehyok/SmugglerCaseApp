@@ -11,7 +11,12 @@
         layout="@layout/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <include
+        android:id="@+id/other_layout"
+        layout="@layout/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/srl_test"
         android:layout_width="match_parent"

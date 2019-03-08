@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,8 @@ public class BlogMessageActivity extends AppCompatActivity {
     RecyclerView rvTest;
     @BindView(R.id.srl_test)
     SmartRefreshLayout srlTest;
+    @BindView( R.id.progress_layout )
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,7 @@ public class BlogMessageActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 model=gson.fromJson(result.toString(), ArticleModel.class);
                 mTestAdapter.setNewData( model.getArticleList() );
+                relativeLayout.setVisibility( View.GONE );
             }
 
             @Override
