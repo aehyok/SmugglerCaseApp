@@ -106,9 +106,7 @@ public class BlogHomeFragment extends Fragment {
     private void getData() {
         //先判断有没有网络
         if (!com.sinostar.assistant.utils.AppNetworkMgr.isNetworkConnected(getActivity())) {
-            refreshLayout.finishRefresh();
-//            progressLayout.setVisibility(View.GONE);
-//            noNetLaoyout.setVisibility(View.VISIBLE);
+
         } else {
             ObserverOnNextListener listener = new ObserverOnNextListener<JsonArray>() {
                 @Override
