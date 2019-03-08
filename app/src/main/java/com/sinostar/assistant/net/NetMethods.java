@@ -147,4 +147,10 @@ public class NetMethods {
     {
         NetMethods(Net.getInstance().serviceProvider(url).getHomeBlog( pageIndex,pageSize,ApplicationUtil.getAccessToken() ),observer);
     }
+
+    public static void getPickBlog(MyObserver<JsonArray> observer,String url,Integer pageIndex,Integer pageSize)
+    {
+        NetMethods(Net.getInstance().serviceProvider(url).getPickBlog( pageIndex,pageSize,ApplicationUtil.getAccessToken() ),observer);
+    }
+
 }

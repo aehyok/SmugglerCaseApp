@@ -1,13 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.BlogMessage.BlogCandidateFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="candidate" />
+        android:layout_below="@+id/other_layout"
+        app:srlEnableOverScrollDrag="true"
+        >
+        <ListView
+            android:id="@+id/candidate_base_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:divider="@color/background"
+            android:dividerHeight="8dp"
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
-</FrameLayout>
+</RelativeLayout>

@@ -325,8 +325,20 @@ public interface RetrofitService {
                                        @Query("pageSize") Integer pageSize,
                                        @Header( "Authorization") String Authorization);
 
+     /**
+     博客园首页文章
+      */
      @GET("/api/blogposts/@sitehome")
     Observable<JsonArray> getHomeBlog(@Query("pageIndex") Integer pageIndex,
                                                 @Query("pageSize") Integer pageSize,
                                                 @Header( "Authorization") String Authorization);
+
+    /**
+     * 博客园精华文章api
+     * @param
+     */
+    @GET("/api/blogposts/@picked")
+    Observable<JsonArray> getPickBlog(@Query( "pageIndex" ) Integer pageIndex,
+                                      @Query( "pageSize" ) Integer pageSize,
+                                      @Header( "Authorization" ) String authorization);
 }

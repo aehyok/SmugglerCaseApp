@@ -44,12 +44,6 @@ public class BlogHomeFragment extends Fragment {
     ListView blogListView;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
-//    @BindView(R.id.progress_layout)
-//    RelativeLayout progressLayout;
-//    @BindView(R.id.no_net_laoyout)
-//    RelativeLayout noNetLaoyout;
-//    @BindView(R.id.empty_layout)
-//    RelativeLayout emptyLayout;
 
     Unbinder unbinder;
     Gson gson;
@@ -68,42 +62,11 @@ public class BlogHomeFragment extends Fragment {
         view.setBackground(new com.sinostar.assistant.utils.WaterMarkBgUtil(ApplicationUtil.getWaterMarkText()));
         blogHomeAdapter = new BlogHomeAdapter(getActivity());
         blogListView.setAdapter(blogHomeAdapter);
-        refreshLayout.setEnableLoadMore(false);
+        refreshLayout.setEnableLoadMore(true);
         gson = new Gson();
         getData();
         refreshData();
         initListener();
-        try{
-            ObserverOnNextListener listener = new ObserverOnNextListener<JsonArray>() {
-                @Override
-                public void onNext(final JsonArray result) {
-                    Gson gson = new Gson();
-
-                    List<HomeBlogModel> list=new ArrayList<HomeBlogModel>();// = gson.fromJson( result, new TypeToken<List<BlogNewsModel>>() {}.getType());
-
-                    list = gson.fromJson( result, new TypeToken<List<HomeBlogModel>>() {}.getType());
-
-                    com.sinostar.assistant.utils.LogUtil.d("待审批列表结果", gson.toJson(result));
-                    blogHomeAdapter.getData(list, 1);
-                    refreshLayout.finishRefresh();
-                }
-
-                @Override
-                public void onError(Throwable e) {
-                }
-            };
-
-            NetMethods.getHomeBlog(new MyObserver<JsonArray>(getContext(), listener),"http://api.cnblogs.com",1,10 );
-        }
-        catch (Throwable e)
-        {
-            throw e;
-        }
-
-
-
-
-
         return view;
     }
     private void initListener() {
@@ -146,18 +109,16 @@ public class BlogHomeFragment extends Fragment {
             ObserverOnNextListener listener = new ObserverOnNextListener<JsonArray>() {
                 @Override
                 public void onNext(JsonArray result) {
-                        gson=new Gson();
-//                    if (result.size() != 0) {
-//
-//                        data = gson.toJson(result);
-//                        com.sinostar.assistant.utils.LogUtil.d("待审批列表结果", gson.toJson(result));
-//                        documentApproveAdapter.getData(result, 1);
-//                        refreshLayout.finishRefresh();
-//                        isEmpty(true);
-//                    } else {
-//                        isEmpty(false);
-//                    }
+                    Gson gson = new Gson();
 
+                    List<HomeBlogModel> list = new ArrayList<HomeBlogModel>();// = gson.fromJson( result, new TypeToken<List<BlogNewsModel>>() {}.getType());
+
+                    list = gson.fromJson( result, new TypeToken<List<HomeBlogModel>>() {
+                    }.getType() );
+
+                    com.sinostar.assistant.utils.LogUtil.d( "待审批列表结果", gson.toJson( result ) );
+                    blogHomeAdapter.getData( list, 1 );
+                    refreshLayout.finishRefresh();
                 }
 
                 @Override
@@ -166,7 +127,6 @@ public class BlogHomeFragment extends Fragment {
                 }
             };
             NetMethods.getHomeBlog(new MyObserver<JsonArray>(getActivity(), listener),"http://api.cnblogs.com",1,10);
-
         }
     }
 }
