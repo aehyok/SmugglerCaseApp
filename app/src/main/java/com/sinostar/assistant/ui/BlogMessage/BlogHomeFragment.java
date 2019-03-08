@@ -50,7 +50,6 @@ public class BlogHomeFragment extends Fragment {
 
 
     private  BlogHomeAdapter blogHomeAdapter;
-    private List<HomeBlogModel> blogList;
     private com.sinostar.assistant.utils.FragmentUtil fragmentUtil;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,7 +88,6 @@ public class BlogHomeFragment extends Fragment {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                blogList.clear();
                 new Handler().postDelayed( new Runnable() {
                     @Override
                     public void run() {

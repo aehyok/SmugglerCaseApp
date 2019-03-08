@@ -65,7 +65,6 @@ public class BlogEssenceFragment extends Fragment {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                blogList.clear();
                 new Handler().postDelayed( new Runnable() {
                     @Override
                     public void run() {
