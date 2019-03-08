@@ -66,7 +66,7 @@ public class BlogEssenceAdapter extends BaseAdapter{
         holder.approveListButton.setVisibility(View.VISIBLE);
         holder.approveListTitle.setText(mList.get(i).getTitle());
 
-        holder.approveListName.setText(mList.get(i).getDescription().substring( 0,40 ));
+        holder.approveListName.setText(mList.get(i).getDescription().substring( 0,20 ));
         holder.approveListPerson.setText("作者："+mList.get(i).getAuthor());
         holder.approveListTime.setText("发布时间："+mList.get(i).getPostDate());
 //
