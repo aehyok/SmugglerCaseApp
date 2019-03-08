@@ -91,9 +91,9 @@ public class MobileApproveActivity extends AppCompatActivity {
 
     private void init() {
         titleBarText.setText(R.string.mobile_approve_title_text);
-        bottomBarText1.setText(R.string.mobile_approve_first);
-        bottomBarText2.setText(R.string.mobile_approve_second);
-        bottomBarText3.setText(R.string.mobile_approve_third);
+        bottomBarText1.setText("Document");
+        bottomBarText2.setText("Regression");
+        bottomBarText3.setText("Apply");
         bottomBarText4.setText(R.string.mobile_approve_fourth);
     }
 
