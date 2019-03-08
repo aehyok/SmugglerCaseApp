@@ -139,8 +139,8 @@ public class NetMethods {
         NetMethods(Net.getInstance().serviceProvider(url).getBlogToken(tokenParameter ),observer);
     }
 
-    public static void  getBlogNews(MyObserver<JsonArray> observer, String url,Integer pageIndex) {
-        NetMethods(Net.getInstance().serviceProvider(url).getBlogNews(pageIndex,10,ApplicationUtil.getAccessToken()),observer);
+    public static void  getBlogNews(MyObserver<JsonArray> observer, String url,Integer pageIndex,Integer pageSize) {
+        NetMethods(Net.getInstance().serviceProvider(url).getBlogNews(pageIndex,pageSize,ApplicationUtil.getAccessToken()),observer);
     }
 
     public static void getHomeBlog(MyObserver<JsonArray> observer,String url,Integer pageIndex,Integer pageSize)

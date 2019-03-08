@@ -121,7 +121,7 @@ public class BlogNewsActivity extends AppCompatActivity {
             }
         };
 
-            NetMethods.getBlogNews(new MyObserver<JsonArray>(BlogNewsActivity.this, listener),"http://api.cnblogs.com",pageIndex );
+            NetMethods.getBlogNews(new MyObserver<JsonArray>(BlogNewsActivity.this, listener),"http://api.cnblogs.com",pageIndex,10 );
         }
         catch (Throwable e)
         {
