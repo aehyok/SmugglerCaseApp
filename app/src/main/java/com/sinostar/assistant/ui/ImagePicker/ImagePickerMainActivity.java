@@ -1,8 +1,13 @@
 package com.sinostar.assistant.ui.ImagePicker;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -19,6 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.ocr.sdk.model.AccessToken;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.lzy.imagepicker.ui.ImageGridActivity;
@@ -36,8 +45,11 @@ import com.sinostar.assistant.ui.research.image.OnRecyclerItemClickListener;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -60,8 +72,9 @@ import com.baidu.ocr.sdk.model.OcrRequestParams;
 import com.baidu.ocr.sdk.model.OcrResponseResult;
 import com.baidu.ocr.sdk.model.Word;
 import com.baidu.ocr.sdk.model.WordSimple;
-import com.tapadoo.alerter.Alerter;
 
+
+import org.json.JSONObject;
 
 import static com.qmuiteam.qmui.widget.dialog.QMUITipDialog.Builder.ICON_TYPE_LOADING;
 
@@ -172,16 +185,30 @@ public class ImagePickerMainActivity extends AppCompatActivity {
                         com.baidu.ocr.demo.RecognizeService.recAccurateBasic( context
                                 ,images.get(i).path,
                                 new com.baidu.ocr.demo.RecognizeService.ServiceListener() {
+                                    @RequiresApi(api = Build.VERSION_CODES.O)
                                     @Override
                                     public void onResult(String result) {
-                                        com.sinostar.assistant.utils.ToastUtil.toast(result);
+                                        Gson gson=new Gson();
+                                        JsonObject returnData = new JsonParser().parse(result).getAsJsonObject();
+                                        JsonArray jsonArray=returnData.getAsJsonArray( "words_result" );
+                                        List<String> list=new ArrayList<>(  );
+                                        for(Integer index=0;index<jsonArray.size();index++) {
+                                            list.add( jsonArray.get(index).getAsJsonObject().get( "words" ).getAsString() );
+                                        }
 
-//                                    Alerter.create(ImagePickerMainActivity.this)
-//                                           .setTitle("Alert Title")
-//                                           .setText("Alert text...")
-//                                           .show();
-
-                                        //Toast.makeText(ImagePickerMainActivity.this,result, Toast.LENGTH_SHORT).show();
+                                        String ss = String.join("\n", list);
+                                        final AlertDialog alertDialog1 = new AlertDialog.Builder(context)
+                                                .setTitle("解析内容")//标题
+                                                .setMessage(ss)//内容
+                                                .setIcon(R.mipmap.ic_launcher)//图标
+                                                .setPositiveButton( "解析完毕", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        dialog.cancel();
+                                                    }
+                                                } )
+                                                .create();
+                                        alertDialog1.show();
                                     }
                                 });
                     }catch (Throwable e )

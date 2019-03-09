@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -26,6 +27,8 @@ import com.sinostar.assistant.bean.HomeBlogModel;
 import com.sinostar.assistant.net.NetMethods;
 import com.sinostar.assistant.subscribers.MyObserver;
 import com.sinostar.assistant.subscribers.ObserverOnNextListener;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,7 +105,6 @@ public class BlogEssenceFragment extends Fragment {
             ObserverOnNextListener listener = new ObserverOnNextListener<JsonArray>() {
                 @Override
                 public void onNext(JsonArray result) {
-
                     List<HomeBlogModel> list = new ArrayList<HomeBlogModel>();// = gson.fromJson( result, new TypeToken<List<BlogNewsModel>>() {}.getType());
 
                     list = gson.fromJson( result, new TypeToken<List<HomeBlogModel>>() {
