@@ -16,7 +16,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.baidu.ocr.sdk.model.AccessToken;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.lzy.imagepicker.ui.ImageGridActivity;
@@ -46,8 +48,23 @@ import okhttp3.RequestBody;
 import top.zibin.luban.CompressionPredicate;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
+import com.baidu.ocr.sdk.OCR;
+import com.baidu.ocr.sdk.OnResultListener;
+import com.baidu.ocr.sdk.exception.OCRError;
+import com.baidu.ocr.sdk.model.BankCardParams;
+import com.baidu.ocr.sdk.model.BankCardResult;
+import com.baidu.ocr.sdk.model.GeneralBasicParams;
+import com.baidu.ocr.sdk.model.GeneralParams;
+import com.baidu.ocr.sdk.model.GeneralResult;
+import com.baidu.ocr.sdk.model.OcrRequestParams;
+import com.baidu.ocr.sdk.model.OcrResponseResult;
+import com.baidu.ocr.sdk.model.Word;
+import com.baidu.ocr.sdk.model.WordSimple;
+import com.tapadoo.alerter.Alerter;
+
 
 import static com.qmuiteam.qmui.widget.dialog.QMUITipDialog.Builder.ICON_TYPE_LOADING;
+
 
 public class ImagePickerMainActivity extends AppCompatActivity {
 
@@ -91,7 +108,24 @@ public class ImagePickerMainActivity extends AppCompatActivity {
         init();
         initListener();
 
+        initAccessTokenWithAkSk();
+    }
 
+
+    private void initAccessTokenWithAkSk() {
+        OCR.getInstance(this).initAccessTokenWithAkSk(new OnResultListener<AccessToken>() {
+            @Override
+            public void onResult(AccessToken result) {
+                String token = result.getAccessToken();
+                //hasGotToken = true;
+            }
+
+            @Override
+            public void onError(OCRError error) {
+                error.printStackTrace();
+                //alertText("AK，SK方式获取token失败", error.getMessage());
+            }
+        }, getApplicationContext(),  "aHVyeBj8SM0ETF71paczERzn", "3cxgv8P2BuIx9s3GNmd8MmDkt1zLmRjw");
     }
 
     private void initListener() {
@@ -133,8 +167,30 @@ public class ImagePickerMainActivity extends AppCompatActivity {
                 List<String> list = new ArrayList<>();
                 for (int i = 0; i < images.size(); i++) {
                     list.add("file://" + images.get(i).path);
-                }
-                compressImage(list);
+                    try
+                    {
+                        com.baidu.ocr.demo.RecognizeService.recAccurateBasic( context
+                                ,images.get(i).path,
+                                new com.baidu.ocr.demo.RecognizeService.ServiceListener() {
+                                    @Override
+                                    public void onResult(String result) {
+                                        com.sinostar.assistant.utils.ToastUtil.toast(result);
+
+//                                    Alerter.create(ImagePickerMainActivity.this)
+//                                           .setTitle("Alert Title")
+//                                           .setText("Alert text...")
+//                                           .show();
+
+                                        //Toast.makeText(ImagePickerMainActivity.this,result, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }catch (Throwable e )
+                    {
+                        throw e;
+                    }
+                 }
+
+                //compressImage(list);
             }
         });
     }
@@ -204,7 +260,7 @@ public class ImagePickerMainActivity extends AppCompatActivity {
 
     private void init() {
 //        titleBarText.setText(caseId);
-        titleBarRightText.setText("上传");
+        titleBarRightText.setText("AI Distinguish");
     }
 
     public void showImageDialog() {
@@ -266,7 +322,7 @@ public class ImagePickerMainActivity extends AppCompatActivity {
             }
         };
 
-        NetMethods.getUploadImage(new MyObserver<Object>(context, listener), ApplicationUtil.getUserId(), caseId, map);
+        //NetMethods.getUploadImage(new MyObserver<Object>(context, listener), ApplicationUtil.getUserId(), caseId, map);
 
     }
 
@@ -300,7 +356,8 @@ public class ImagePickerMainActivity extends AppCompatActivity {
                         path.insert(6, "//");
                         map.put(getFileNameNoEx(file.getName()),  //上传图片的名称
                                 RequestBody.create(MediaType.parse("multipart/form-data"), path.toString()));  //上传的图片
-                        uploadImage(map);
+                        //uploadImage(map);
+                        com.sinostar.assistant.utils.ToastUtil.toast("上传成功");
                     }
 
                     @Override
