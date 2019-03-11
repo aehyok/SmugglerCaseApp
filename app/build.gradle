@@ -18,6 +18,7 @@ android {
     }
     buildTypes {
         release {
+            //false代表没有设置混淆
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
