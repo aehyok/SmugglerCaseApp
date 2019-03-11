@@ -29,6 +29,7 @@ import butterknife.ButterKnife;
  */
 public class GuideActivity extends AppCompatActivity {
 
+    //测试
     @BindView(R.id.guide_image)
     ImageView guideImage;
     @BindView(R.id.vp_guide)
