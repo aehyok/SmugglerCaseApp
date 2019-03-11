@@ -8,8 +8,8 @@ public class Constent {
     public static final String MI_APPID = "2882303761517943668";   //小米推送appid
     public static final String MI_APP_KEY = "5231794375668";       //小米推送appkey
     public static final String XUFEI_APPID = "5c47e298";        //讯飞appid
-    public final static String URL ="http://39.104.26.38:8177/";    //服务器地址
-    public static final String PDF_URL = "http://39.104.26.38:8177/index.html?docid=";    //PDF文档地址
+    public final static String URL ="http://39.104.26.38/";    //服务器地址
+    public static final String PDF_URL = "http://39.104.26.38/index.html?docid=";    //PDF文档地址
     public final static String CHAT_GROUP_AVATAR="http://img1.imgtn.bdimg.com/it/u=2469182935,2633225542&fm=26&gp=0.jpg";   //群聊头像地址
 
 
