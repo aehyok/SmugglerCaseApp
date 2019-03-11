@@ -9,12 +9,12 @@
 
    >
     <ImageView
-        android:id="@+id/guide_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/homeguide"
-        />
+    android:id="@+id/guide_image"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    android:src="@drawable/homeguide"
+    />
 <RelativeLayout
     android:id="@+id/guide_layout"
     android:layout_width="match_parent"
