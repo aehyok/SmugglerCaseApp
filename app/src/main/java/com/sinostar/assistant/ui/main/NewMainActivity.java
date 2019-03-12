@@ -32,6 +32,12 @@ public class NewMainActivity extends AppCompatActivity {
     @BindView(R.id.bottom_bar_text4)
     TextView bottomBarText4;
 
+    private com.sinostar.assistant.utils.FragmentUtil fragmentUtil;
+    private NewHomeFragment homeFragment;
+    private NewMineFragment mineFragment;
+    private NewNewsFragment newsFragment;
+    private NewOrderFragment orderFragment;
+
     private int image[] = {R.drawable.home, R.drawable.home_news, R.drawable.home_order, R.drawable.home_mine};
     private int imageSelect[] = {R.drawable.home_select, R.drawable.home_news_select, R.drawable.home_order_select, R.drawable.home_mine_select};
     private ImageView imageviews[];
@@ -46,28 +52,34 @@ public class NewMainActivity extends AppCompatActivity {
         textViews = new TextView[]{bottomBarText1, bottomBarText2, bottomBarText3, bottomBarText4};
         bottomBarImage1.setBackgroundResource(R.drawable.home_select);
         bottomBarText1.setTextColor(getResources().getColor(R.color.login_button));
+        homeFragment = new NewHomeFragment();
+        mineFragment = new NewMineFragment();
+        orderFragment = new NewOrderFragment();
+        newsFragment = new NewNewsFragment();
+        com.sinostar.assistant.utils.FragmentUtil.addFragment(getSupportFragmentManager(), homeFragment, R.id.home_fragment_container);
+        fragmentUtil = new com.sinostar.assistant.utils.FragmentUtil(this, homeFragment, R.id.home_fragment_container);
     }
 
     @OnClick({R.id.bottom_bar_first_layout, R.id.bottom_bar_second_layout, R.id.bottom_bar_third_layout, R.id.bottom_bar_fourth_laout})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bottom_bar_first_layout:
-                //fragmentUtil.switchFragment(homeFragment);
+                fragmentUtil.switchFragment(homeFragment);
                 BottomNewBarUtil.setImage(this, 0, image, imageSelect, imageviews);
                 BottomNewBarUtil.setTextColor(this, 0, textViews);
                 break;
             case R.id.bottom_bar_second_layout:
-                //fragmentUtil.switchFragment(newsFragment);
+                fragmentUtil.switchFragment(newsFragment);
                 BottomNewBarUtil.setImage(this, 1, image, imageSelect, imageviews);
                 BottomNewBarUtil.setTextColor(this, 1, textViews);
                 break;
             case R.id.bottom_bar_third_layout:
-                //fragmentUtil.switchFragment(orderFragment);
+                fragmentUtil.switchFragment(orderFragment);
                 BottomNewBarUtil.setImage(this, 2, image, imageSelect, imageviews);
                 BottomNewBarUtil.setTextColor(this, 2, textViews);
                 break;
             case R.id.bottom_bar_fourth_laout:
-                //fragmentUtil.switchFragment(mineFragment);
+                fragmentUtil.switchFragment(mineFragment);
                 BottomNewBarUtil.setImage(this, 3, image, imageSelect, imageviews);
                 BottomNewBarUtil.setTextColor(this, 3, textViews);
                 break;
