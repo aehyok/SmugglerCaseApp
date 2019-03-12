@@ -44,4 +44,6 @@
     <color name="login_button">#07D4C6</color>
     <color name="home_bottom_green">#07D4C6</color>
     <color name="home_bottom_grey">#666666</color>
+    <color name="home_text_black">#1C1C1C</color>
+    <color name="home_text_grey">#939393</color>
 </resources>

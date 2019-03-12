@@ -2,5 +2,9 @@
 <resources>
     <dimen name="text_big">15sp</dimen>
     <dimen name="text_small">13sp</dimen>
-
+    <dimen name="home_padding_left">12dp</dimen>
+    <dimen name="home_padding_right">12dp</dimen>
+    <dimen name="home_search_padding">6dp</dimen>
+    <dimen name="home_search_margin">4dp</dimen>
+    <dimen name="home_list_title">16sp</dimen>
 </resources>

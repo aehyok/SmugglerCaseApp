@@ -2,13 +2,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sinostar.assistant.ui.main.NewHomeFragment">
+    tools:context="com.sinostar.assistant.ui.main.NewHomeFragment"
+    android:fitsSystemWindows="true"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/home_title_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="30dp"
-        android:text="fragment_new_home" />
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="@dimen/home_padding_left"
+        android:paddingEnd="@dimen/home_padding_right"
+        >
+        <RelativeLayout
+            android:id="@+id/home_location_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+            <ImageView
+                android:id="@+id/location_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/location_black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/location_image"
+                android:text="Shenzhen"
+                android:textColor="@color/home_text_black"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/home_searchlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/home_message"
+            android:background="@drawable/home_search_shape"
+            android:padding="@dimen/home_search_padding"
+            android:layout_marginStart="@dimen/home_search_margin"
+            android:layout_marginEnd="@dimen/home_search_margin"
+            android:layout_toEndOf="@+id/home_location_layout"
+            >
+
+            <ImageView
+                android:id="@+id/home_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_search"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/home_search"
+                android:text="搜索"
+                android:layout_centerVertical="true"
+                android:textColor="@color/home_text_grey"
+                />
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/home_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_message"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
 
 </FrameLayout>
