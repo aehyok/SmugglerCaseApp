@@ -41,7 +41,7 @@
     <color name="chat_voice_text_backgroud">#B84243</color>
     <color name="chat_map_location_bg">#D9E9F9</color>
     <color name="chat_tip_line_bg">#50ffffff</color>
-
-
-
+    <color name="login_button">#07D4C6</color>
+    <color name="home_bottom_green">#07D4C6</color>
+    <color name="home_bottom_grey">#666666</color>
 </resources>

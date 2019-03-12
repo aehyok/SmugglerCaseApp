@@ -34,6 +34,7 @@ import com.sinostar.assistant.ui.LoginActivity;
 import com.sinostar.assistant.ui.addressList.AdressList;
 import com.sinostar.assistant.ui.addressList.ChatLogin;
 import com.sinostar.assistant.ui.cassAssistant.CaseAssistantActivity;
+import com.sinostar.assistant.ui.main.NewMainActivity;
 import com.sinostar.assistant.ui.mobile.MobileApproveActivity;
 import com.sinostar.assistant.ui.query.DataQuery;
 import com.sinostar.assistant.ui.research.ObtainEvidence;
@@ -149,7 +150,7 @@ public class HomeActivity extends BaseActivity {
                             isLogin( BlogMessageActivity.class );
                             break;
                         case 1:  //办案助手
-                            isLogin(CaseAssistantActivity.class);
+                            isLogin(NewMainActivity.class);
                             break;
                         case 2:  //预警提示
                             isLogin(BlogRemindActivity.class);

@@ -371,7 +371,8 @@
         <activity android:name=".ui.BlogMessage.BlogRemindActivity" />
         <activity android:name=".ui.BlogMessage.BlogNewsActivity" />
         <activity android:name=".ui.BlogMessage.BlogNewsContentActivity" />
-        <activity android:name=".ui.ImagePicker.ImagePickerMainActivity"></activity>
+        <activity android:name=".ui.ImagePicker.ImagePickerMainActivity" />
+        <activity android:name=".ui.main.NewMainActivity"></activity>
     </application>
 
 </manifest>
