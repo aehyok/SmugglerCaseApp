@@ -1,4 +1,4 @@
-package com.sinostar.assistant.ui.home;
+package com.sinostar.assistant.ui.main;
 
 import android.content.Context;
 import android.view.KeyCharacterMap;
@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sinostar.assistant.R;
+import com.sinostar.assistant.ui.home.HomeGridViewAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,18 +21,14 @@ import static com.sinostar.assistant.utils.AppScreenMgr.getRealScreenHeight;
 import static com.sinostar.assistant.utils.AppScreenMgr.getScreenHeight;
 import static com.sinostar.assistant.utils.AppScreenMgr.getScreenWidth;
 import static com.sinostar.assistant.utils.AppScreenMgr.getStatusBarHeight;
-import static com.sinostar.assistant.utils.DensityUtils.dip2px;
 import static com.sinostar.assistant.utils.DensityUtils.dp2px;
 
-/**
- * 主页的Adapter
- */
-public class HomeGridViewAdapter extends BaseAdapter {
+public class NewHomeGridViewAdapter extends BaseAdapter {
     String mList[] = {};
     Context context;
     int mImageList[];
 
-    HomeGridViewAdapter(Context context, String list[], int imageList[]) {
+    NewHomeGridViewAdapter(Context context, String list[], int imageList[]) {
         this.context = context;
         this.mList = list;
         this.mImageList = imageList;
@@ -43,27 +40,27 @@ public class HomeGridViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public Object getItem(int position) {
         return null;
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int position) {
         return 0;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(int i, View view, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        ViewHolder holder;
+        NewHomeGridViewAdapter.ViewHolder holder;
         if (view == null) {
-            view = inflater.inflate(R.layout.obtain_list, null);
-            holder = new ViewHolder(view);
+            view = inflater.inflate(R.layout.newhome_list, null);
+            holder = new NewHomeGridViewAdapter.ViewHolder(view);
             view.setTag(holder);
         } else {
-            holder = (ViewHolder) view.getTag();
+            holder = (NewHomeGridViewAdapter.ViewHolder) view.getTag();
         }
-        int itemWidth = (getScreenWidth(context)) / 4;
+        int itemWidth = (getScreenWidth(context)) / 10;
         ViewGroup.LayoutParams lp = holder.homeImage.getLayoutParams();
         lp.width = itemWidth;
         lp.height = itemWidth;
@@ -72,10 +69,10 @@ public class HomeGridViewAdapter extends BaseAdapter {
 
         int height;
         if(!isNavigationBarAvailable()){
-             height = (getScreenHeight(context)-dp2px(context,56)-getStatusBarHeight(context)) / 4;
+            height = (getScreenHeight(context)-dp2px(context,56)-getStatusBarHeight(context)) / 8;
 
         }else{
-             height = (getRealScreenHeight(context)-dp2px(context,56)-getStatusBarHeight(context)) / 4;
+            height = (getRealScreenHeight(context)-dp2px(context,56)-getStatusBarHeight(context)) / 8;
         }
         ViewGroup.LayoutParams params = holder.homeLayout.getLayoutParams();
         params.height = height;
@@ -107,7 +104,4 @@ public class HomeGridViewAdapter extends BaseAdapter {
         boolean hasHomeKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_HOME);
         return (!(hasBackKey && hasHomeKey));
     }
-
-
-
 }

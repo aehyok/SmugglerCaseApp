@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.sinostar.assistant.R;
 import com.sinostar.assistant.bean.Login;
 import com.sinostar.assistant.ui.LoginActivity;
+import com.sinostar.assistant.ui.home.HomeGridViewAdapter;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -34,6 +36,12 @@ public class NewHomeFragment extends android.support.v4.app.Fragment {
     @BindView(R.id.home_banner)
     Banner homeBanner;
     Unbinder unbinder;
+    String[] homeText = {"Blog ", "Assistant", " Remind", " Manager", "Gallery", "Approval", "Picker", "Contacts"};
+    int[] homeImage = {R.drawable.tztg, R.drawable.bazs, R.drawable.yjts,
+            R.drawable.zfda, R.drawable.xcqz, R.drawable.ydsp, R.drawable.sjcx, R.drawable.txl};
+    @BindView(R.id.home_gridview)
+    GridView homeGridview;
+    NewHomeGridViewAdapter homeGridViewAdapter;
     public NewHomeFragment() {
         // Required empty public constructor
     }
@@ -51,6 +59,8 @@ public class NewHomeFragment extends android.support.v4.app.Fragment {
         list.add(R.drawable.home_hot_2);
         initBanner(list);
         initListener();
+        homeGridViewAdapter = new NewHomeGridViewAdapter(getContext(), homeText, homeImage);
+        homeGridview.setAdapter(homeGridViewAdapter);
         return view;
     }
     private void initBanner(List images) {
