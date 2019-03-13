@@ -372,7 +372,8 @@
         <activity android:name=".ui.BlogMessage.BlogNewsActivity" />
         <activity android:name=".ui.BlogMessage.BlogNewsContentActivity" />
         <activity android:name=".ui.ImagePicker.ImagePickerMainActivity" />
-        <activity android:name=".ui.main.NewMainActivity"></activity>
+        <activity android:name=".ui.main.NewMainActivity" />
+        <activity android:name=".ui.main.NewTestActivity"></activity>
     </application>
 
 </manifest>

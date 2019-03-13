@@ -14,8 +14,15 @@ import android.widget.ListView;
 
 import com.sinostar.assistant.R;
 import com.sinostar.assistant.bean.Login;
+import com.sinostar.assistant.ui.BlogMessage.BlogMessageActivity;
+import com.sinostar.assistant.ui.BlogMessage.BlogNewsActivity;
+import com.sinostar.assistant.ui.BlogMessage.BlogRemindActivity;
+import com.sinostar.assistant.ui.ImagePicker.ImagePickerMainActivity;
 import com.sinostar.assistant.ui.LoginActivity;
+import com.sinostar.assistant.ui.addressList.ChatLogin;
 import com.sinostar.assistant.ui.home.HomeGridViewAdapter;
+import com.sinostar.assistant.ui.mobile.MobileApproveActivity;
+import com.sinostar.assistant.ui.research.ObtainEvidence;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -83,6 +90,7 @@ public class NewHomeFragment extends android.support.v4.app.Fragment {
         //banner设置方法全部调用完毕时最后调用
         homeBanner.start();
     }
+
     private void initListener() {
         homeBanner.setOnBannerListener(new OnBannerListener() {
             @Override
@@ -90,6 +98,32 @@ public class NewHomeFragment extends android.support.v4.app.Fragment {
                 enterStoreInfo();
             }
         });
+
+        homeGridview.setOnItemClickListener(new com.sinostar.assistant.utils.OnMultiItemClickListener() {
+            @Override
+            public void onItemClick1(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:  //通知公告
+                        startActivity(new Intent(getActivity(), NewTestActivity.class));
+                        break;
+                    case 1:  //办案助手
+                        break;
+                    case 2:  //预警提示
+                        break;
+                    case 3:  //执法档案
+                        break;
+                    case 4:  //现场取证
+                        break;
+                    case 5:  //移动审批
+                        break;
+                    case 6:  //数据查询
+                        break;
+                    case 7: //通讯录
+                        break;
+                }
+            }
+        });
+
     }
 
     private void enterStoreInfo(){

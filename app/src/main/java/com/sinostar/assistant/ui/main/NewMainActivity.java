@@ -1,14 +1,23 @@
 package com.sinostar.assistant.ui.main;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.sinostar.assistant.R;
 import com.sinostar.assistant.Utils.BottomNewBarUtil;
+import com.sinostar.assistant.ui.BlogMessage.BlogMessageActivity;
+import com.sinostar.assistant.ui.BlogMessage.BlogNewsActivity;
+import com.sinostar.assistant.ui.BlogMessage.BlogRemindActivity;
+import com.sinostar.assistant.ui.ImagePicker.ImagePickerMainActivity;
+import com.sinostar.assistant.ui.addressList.ChatLogin;
+import com.sinostar.assistant.ui.mobile.MobileApproveActivity;
+import com.sinostar.assistant.ui.research.ObtainEvidence;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -85,4 +94,7 @@ public class NewMainActivity extends AppCompatActivity {
                 break;
         }
     }
+
+
+
 }
