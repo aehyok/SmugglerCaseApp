@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.sinostar.assistant.ui.main.NewHomeFragment"
     android:fitsSystemWindows="true"
     android:background="@color/white">
@@ -29,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/location_image"
-                android:text="Shenzhen"
+                android:text="深圳"
                 android:textColor="@color/home_text_black"
                 />
 
@@ -76,5 +77,51 @@
 
 
     </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/home_title_layout"
+        app:srlEnableOverScrollDrag="true"
+        >
+        <ScrollView
+            android:id="@+id/home_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/home_padding_left"
+            android:paddingEnd="@dimen/home_padding_right"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                >
+
+
+                <!--banner-->
+                <RelativeLayout
+                    android:id="@+id/home_banner_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="45dp"
+
+                    >
+
+                    <com.youth.banner.Banner
+                        android:id="@+id/home_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="0dp">
+
+                    </com.youth.banner.Banner>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </FrameLayout>
