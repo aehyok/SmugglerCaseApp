@@ -27,6 +27,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     public boolean isViewFromObject(View view, Object object) {
         return view==object;
     }
+    @Override
     public Object instantiateItem(ViewGroup container, int position) {
         return container;
     }

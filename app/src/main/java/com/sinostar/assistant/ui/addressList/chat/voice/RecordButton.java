@@ -113,6 +113,7 @@ public class RecordButton extends android.support.v7.widget.AppCompatButton impl
     private float mTime = 0;
 
     private Handler mHandler = new Handler(){
+        @Override
         public void handleMessage(android.os.Message msg) {
             switch (msg.what) {
                 case MSG_AUDIO_PREPARED:

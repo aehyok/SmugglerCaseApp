@@ -302,8 +302,9 @@ public class AppScreenMgr {
      * @return 是否存在sd卡
      */
     private static Boolean isExistsSD() {
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             return true;
+        }
         return false;
     }
 

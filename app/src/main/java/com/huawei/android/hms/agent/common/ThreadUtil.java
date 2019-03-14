@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 /**
  * 线程工具，用于执行线程等
  */
+@SuppressWarnings({"AlibabaThreadPoolCreation", "AlibabaClassMustHaveAuthor"})
 public final class ThreadUtil {
     public static final ThreadUtil INST = new ThreadUtil();
 
@@ -44,6 +45,7 @@ public final class ThreadUtil {
      * 获取缓存线程池
      * @return 缓存线程池服务
      */
+    @SuppressWarnings("AlibabaThreadPoolCreation")
     private ExecutorService getExecutorService(){
         if (executors == null) {
             try {

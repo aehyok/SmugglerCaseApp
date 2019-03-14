@@ -78,8 +78,9 @@ public class EmojiconRecentsGridFragment extends EmojiconGridFragment implements
         recents.push(emojicon);
 
         // notify dataset changed
-        if (mAdapter != null)
+        if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
+        }
     }
 
 }

@@ -336,6 +336,7 @@ public class ChatMap extends BaseActivity {
         });
     }
 
+    @Override
     public void requestRunPermisssion(String[] permissions, BaseActivity.PermissionListener listener) {
         mListener = listener;
         List<String> permissionLists = new ArrayList<>();

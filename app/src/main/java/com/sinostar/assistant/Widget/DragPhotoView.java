@@ -283,10 +283,12 @@ public class DragPhotoView extends PhotoView {
         mDownY = event.getY();
     }
 
+    @Override
     public float getMinScale() {
         return mMinScale;
     }
 
+    @Override
     public void setMinScale(float minScale) {
         mMinScale = minScale;
     }

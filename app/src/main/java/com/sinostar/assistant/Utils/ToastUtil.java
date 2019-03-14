@@ -41,6 +41,7 @@ public class ToastUtil {
         toast.show();
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
+            @Override
             public void run() {
                 toast.cancel();
             }
@@ -58,6 +59,7 @@ public class ToastUtil {
         toast.show();
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
+            @Override
             public void run() {
                 toast.cancel();
             }

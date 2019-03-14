@@ -113,13 +113,16 @@ public class QQTipView extends View {
             // 跑出屏幕左边的话,令值为距离值
             realLeft = mBorderMargin;
             // 防止三角下标与方块分离
-            if (x - mCorner <= realLeft) x = realLeft + mCorner * 2;
+            if (x - mCorner <= realLeft) {
+                x = realLeft + mCorner * 2;
+            }
         } else if (realLeft + (mItemWidth * mItemList.size()) > mScreenWidth) {
             // 跑出屏幕右边的话，则减去溢出的宽度，再减去距离值
             realLeft -= realLeft + (mItemWidth * mItemList.size()) - mScreenWidth + mBorderMargin;
             // 防止三角下标与方块分离
-            if (x + mCorner >= realLeft + mItemWidth * mItemList.size())
+            if (x + mCorner >= realLeft + mItemWidth * mItemList.size()) {
                 x = realLeft + mItemWidth * mItemList.size() - mCorner * 2;
+            }
         }
     }
 
@@ -151,10 +154,11 @@ public class QQTipView extends View {
         mItemRectList.clear();
         mPath.reset(); // 清理路径
         // 绘制三角下标：根据是否有Item被点击绘制不同颜色
-        if (choose != -1)
+        if (choose != -1) {
             doPaint.setColor(Color.DKGRAY);
-        else
+        } else {
             doPaint.setColor(Color.BLACK);
+        }
 
         mPath.moveTo(x, mTriangleTop);
         mPath.lineTo(x - mHalfTriangleWidth, mItemBorder);
@@ -231,10 +235,11 @@ public class QQTipView extends View {
         mItemRectList.clear();
 
         mPath.reset();
-        if (choose != -1)
+        if (choose != -1) {
             doPaint.setColor(Color.DKGRAY);
-        else
+        } else {
             doPaint.setColor(Color.BLACK);
+        }
 
         mPath.moveTo(x, mTriangleTop);
         mPath.lineTo(x - mHalfTriangleWidth, mItemBorder);

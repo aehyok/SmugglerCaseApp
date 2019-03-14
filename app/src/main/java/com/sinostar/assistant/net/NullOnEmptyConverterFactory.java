@@ -20,7 +20,9 @@ public class NullOnEmptyConverterFactory extends Converter.Factory {
         return new Converter<ResponseBody,Object>() {
             @Override
             public Object convert(ResponseBody body) throws IOException {
-                if (body.contentLength() == 0) return null;
+                if (body.contentLength() == 0) {
+                    return null;
+                }
                 return delegate.convert(body);
             }
         };

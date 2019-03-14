@@ -200,7 +200,7 @@ public class Chat extends AppCompatActivity implements EmojiconsFragment.OnEmoji
         //初始化聊天
         conversation = EMClient.getInstance().chatManager().getConversation(personName);
         if(getIntent().getStringExtra(Constent.IS_GROUP_CHAT)!=null){
-            if(getIntent().getStringExtra(Constent.IS_GROUP_CHAT).equals("1")){
+            if("1".equals( getIntent().getStringExtra( Constent.IS_GROUP_CHAT ) )){
                 isGroupChat=true;
             }else{
                 isGroupChat=false;

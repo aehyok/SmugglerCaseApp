@@ -22,6 +22,7 @@ public class NoScrollGridView extends GridView {
     /**
      * 设置不滚动
      */
+    @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
         int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,

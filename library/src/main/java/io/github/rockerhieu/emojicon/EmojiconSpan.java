@@ -54,6 +54,7 @@ class EmojiconSpan extends DynamicDrawableSpan {
         mTextSize = textSize;
     }
 
+    @Override
     public Drawable getDrawable() {
         if (mDrawable == null) {
             try {

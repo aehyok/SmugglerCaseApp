@@ -274,6 +274,7 @@ public class ObtainEvidence extends BaseActivity {
      */
     private RecognizerDialogListener recognizerDialogListener = new RecognizerDialogListener() {
 
+        @Override
         public void onResult(RecognizerResult results, boolean isLast) {
             String result = parseVoice(results.getResultString());
             if (result != null && !result.equals("")) {
@@ -286,6 +287,7 @@ public class ObtainEvidence extends BaseActivity {
         /**
          * 识别回调错误.
          */
+        @Override
         public void onError(SpeechError error) {
 
         }

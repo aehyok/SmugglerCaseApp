@@ -12,6 +12,7 @@ import java.util.TimerTask;
 /**
  * 键盘工具类
  */
+@SuppressWarnings("AlibabaAvoidUseTimer")
 public class AppKeyBoardMgr {
     /**
      * 打开软键盘
@@ -41,7 +42,9 @@ public class AppKeyBoardMgr {
     /**
      * 通过定时器强制隐藏虚拟键盘
      */
+    @SuppressWarnings("AlibabaAvoidUseTimer")
     public static void TimerHideKeyboard(final View v) {
+        //noinspection AlibabaAvoidUseTimer
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override

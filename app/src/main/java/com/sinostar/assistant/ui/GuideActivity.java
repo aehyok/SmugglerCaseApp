@@ -146,6 +146,7 @@ public class GuideActivity extends AppCompatActivity {
         } else {//打开启动页
             guideLayout.setVisibility(View.GONE);
             new Handler().postDelayed(new Runnable() {
+                @Override
                 public void run() {
                     Intent intent = new Intent(GuideActivity.this, HomeActivity.class);
                     startActivity(intent);

@@ -252,16 +252,19 @@ public class EmojiconsFragment extends Fragment implements ViewPager.OnPageChang
          *                        periodically
          */
         public RepeatListener(int initialInterval, int normalInterval, View.OnClickListener clickListener) {
-            if (clickListener == null)
+            if (clickListener == null) {
                 throw new IllegalArgumentException("null runnable");
-            if (initialInterval < 0 || normalInterval < 0)
+            }
+            if (initialInterval < 0 || normalInterval < 0) {
                 throw new IllegalArgumentException("negative interval");
+            }
 
             this.initialInterval = initialInterval;
             this.normalInterval = normalInterval;
             this.clickListener = clickListener;
         }
 
+        @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
             switch (motionEvent.getAction()) {
                 case MotionEvent.ACTION_DOWN:

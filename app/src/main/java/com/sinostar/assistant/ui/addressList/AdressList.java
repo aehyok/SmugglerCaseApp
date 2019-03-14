@@ -88,7 +88,7 @@ public class AdressList extends BaseActivity {
         fragmentUtil = new FragmentUtil(this, callRecordFragment, R.id.adresslsit_fragment_container);
 //        currentFragment = callRecordFragment;
 
-        if (personName != null && !personName.equals("")) {
+        if (personName != null && !"".equals( personName )) {
             setTextColor(this, 2, textView);
             setImage(this, 2, image1, image2, imageView);
             Bundle bundle = new Bundle();

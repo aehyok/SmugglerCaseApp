@@ -29,6 +29,7 @@ public class ImageCheck extends Activity {
     private ViewPager mViewPager;
 
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context=ImageCheck.this;

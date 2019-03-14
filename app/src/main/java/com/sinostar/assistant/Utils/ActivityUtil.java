@@ -22,8 +22,9 @@ public class ActivityUtil implements Application.ActivityLifecycleCallbacks{
      * @return 是否在前台显示
      */
     public static boolean isForeground(Context context, String className) {
-        if (context == null || TextUtils.isEmpty(className))
+        if (context == null || TextUtils.isEmpty(className)) {
             return false;
+        }
         ActivityManager am = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
         List<ActivityManager.RunningTaskInfo> list = am.getRunningTasks(1);
 //        boolean flag=false;

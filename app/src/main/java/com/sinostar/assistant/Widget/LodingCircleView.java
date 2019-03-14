@@ -93,8 +93,9 @@ public class LodingCircleView extends View {
         canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredWidth() / 2, getMeasuredWidth() / 2 - progressCirclePadding / 2, paintCircle);
         RectF f = new RectF(progressCirclePadding, progressCirclePadding, getMeasuredWidth() - progressCirclePadding, getMeasuredWidth() - progressCirclePadding);
         canvas.drawArc(f, startAngle, sweepAngle, true, paintProgressCircle);
-        if (!fillIn)
+        if (!fillIn) {
             canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredWidth() / 2, getMeasuredWidth() / 2 - progressCirclePadding * 2, paintCircle);
+        }
 
 
     }
@@ -102,14 +103,16 @@ public class LodingCircleView extends View {
 
     public void startAnimAutomatic(boolean fillIn) {
         this.fillIn = fillIn;
-        if (mLodingCircleViewAnim != null)
+        if (mLodingCircleViewAnim != null) {
             clearAnimation();
+        }
         startAnimation(mLodingCircleViewAnim);
     }
 
     public void stopAnimAutomatic() {
-        if (mLodingCircleViewAnim != null)
+        if (mLodingCircleViewAnim != null) {
             clearAnimation();
+        }
     }
 
 
