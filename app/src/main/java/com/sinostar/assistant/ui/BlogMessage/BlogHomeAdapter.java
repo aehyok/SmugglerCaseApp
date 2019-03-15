@@ -81,8 +81,6 @@ public class BlogHomeAdapter extends BaseAdapter {
         holder.approveListName.setText(mList.get(i).getDescription().substring( 0,40 ));
         holder.approveListPerson.setText("作者："+mList.get(i).getAuthor());
         holder.approveListTime.setText("发布时间："+mList.get(i).getPostDate());
-//
-//        return view;LayoutInflater inflater = LayoutInflater.from(context);
         return view;
     }
 

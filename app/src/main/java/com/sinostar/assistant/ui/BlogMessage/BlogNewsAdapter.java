@@ -27,13 +27,11 @@ public class BlogNewsAdapter extends BaseQuickAdapter<BlogNewsModel, BaseViewHol
     @Override
     protected void convert(BaseViewHolder helper, BlogNewsModel item) {
         //将每一个需要赋值的id和对应的数据绑定
-
         ImageView imageView=helper.getView( R.id.login_title_images );
         helper.setText( R.id.test_item_title, item.getTitle() )
                .setText( R.id.test_item_message, item.getSummary() )
                .setText( R.id.title_date, item.getDateAdded() )
                .setText( R.id.title_author, "阅读量：" + item.getViewCount() );
-                //.setImageBitmap(R.id.login_title_image,getImageBitmap(item.getTopicIcon()));
         try
         {
             Picasso.get().load( item.getTopicIcon() ).into( imageView );

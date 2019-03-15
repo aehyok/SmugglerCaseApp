@@ -153,4 +153,9 @@ public class NetMethods {
         NetMethods(Net.getInstance().serviceProvider(url).getPickBlog( pageIndex,pageSize,ApplicationUtil.getAccessToken() ),observer);
     }
 
+    public static void getMovie(MyObserver<JsonObject> observer)
+    {
+        NetMethods(Net.getInstance().serviceProvider("https://api.douban.com").getMovie("深圳"),observer);
+    }
+
 }

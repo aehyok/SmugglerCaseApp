@@ -116,7 +116,7 @@ public class BlogHomeFragment extends Fragment {
                 public void onNext(JsonArray result) {
                     Gson gson = new Gson();
 
-                    List<HomeBlogModel> list = new ArrayList<HomeBlogModel>();// = gson.fromJson( result, new TypeToken<List<BlogNewsModel>>() {}.getType());
+                    List<HomeBlogModel> list;
 
                     list = gson.fromJson( result, new TypeToken<List<HomeBlogModel>>() {
                     }.getType() );

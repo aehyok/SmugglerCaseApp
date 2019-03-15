@@ -341,4 +341,11 @@ public interface RetrofitService {
     Observable<JsonArray> getPickBlog(@Query( "pageIndex" ) Integer pageIndex,
                                       @Query( "pageSize" ) Integer pageSize,
                                       @Header( "Authorization" ) String authorization);
+
+
+    /**
+    ** http://api.douban.com
+     **/
+    @GET("/v2/movie/in_theaters")
+    Observable<JsonObject> getMovie(@Query("city") String city);
 }
