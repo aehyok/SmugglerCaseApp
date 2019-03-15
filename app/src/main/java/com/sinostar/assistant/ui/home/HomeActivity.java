@@ -33,6 +33,7 @@ import com.sinostar.assistant.ui.ImagePicker.ImagePickerMainActivity;
 import com.sinostar.assistant.ui.LoginActivity;
 import com.sinostar.assistant.ui.addressList.AdressList;
 import com.sinostar.assistant.ui.addressList.ChatLogin;
+import com.sinostar.assistant.ui.basecontrol.baseControlActivity;
 import com.sinostar.assistant.ui.cassAssistant.CaseAssistantActivity;
 import com.sinostar.assistant.ui.main.NewMainActivity;
 import com.sinostar.assistant.ui.mobile.MobileApproveActivity;
@@ -169,7 +170,7 @@ public class HomeActivity extends BaseActivity {
                             break;
                         case 7: //通讯录
 //                    isLogin(AdressList.class);
-                            startActivity(new Intent(context, ChatLogin.class));
+                            isLogin(baseControlActivity.class);
                             break;
 
                     }
