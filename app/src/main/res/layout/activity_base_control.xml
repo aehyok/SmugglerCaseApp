@@ -40,6 +40,7 @@
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
                 android:id="@+id/spinner">
             </Spinner>
         </LinearLayout>
@@ -96,10 +97,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <!--TextView水平和垂直方向居中显示-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4、单选框："/>
+                android:text="4、单选框："
+                android:layout_gravity="center_vertical"
+                android:textAlignment="center"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,6 +127,75 @@
                     android:text="DD"/>
             </RadioGroup>
         </LinearLayout>
+    </RelativeLayout>
+    <!--5、Button按钮-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/anniu"
+        android:layout_below="@+id/danxuankuang">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5、按钮和Toast："/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toast"
+                android:id="@+id/button"
+                />
+        </LinearLayout>
 
     </RelativeLayout>
+    <!--6、Button按钮-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogButton"
+        android:layout_below="@+id/anniu">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6、按钮和Dialog："/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ButtonDialog"
+                android:id="@+id/buttonDialog"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!--7、Button按钮弹出登录框-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginButton"
+        android:layout_below="@+id/dialogButton">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6、按钮和Dialog："/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ButtonDialog"
+
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
 </RelativeLayout>

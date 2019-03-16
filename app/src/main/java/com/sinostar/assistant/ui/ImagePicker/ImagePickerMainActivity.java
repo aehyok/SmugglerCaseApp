@@ -198,9 +198,9 @@ public class ImagePickerMainActivity extends AppCompatActivity {
 
                                         String ss = String.join("\n", list);
                                         final AlertDialog alertDialog1 = new AlertDialog.Builder(context)
-                                                .setTitle("解析内容")//标题
-                                                .setMessage(ss)//内容
-                                                .setIcon(R.mipmap.ic_launcher)//图标
+                                                .setTitle("解析内容")
+                                                .setMessage(ss)
+                                                .setIcon(R.mipmap.ic_launcher)
                                                 .setPositiveButton( "解析完毕", new DialogInterface.OnClickListener() {
                                                     @Override
                                                     public void onClick(DialogInterface dialog, int which) {
