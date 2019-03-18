@@ -53,7 +53,7 @@ public class baseControlActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.button,R.id.buttonDialog,R.id.loginDialogButton,R.id.login2DialogButton})
+    @OnClick({R.id.button,R.id.buttonDialog,R.id.loginDialogButton,R.id.login2DialogButton,R.id.login3DialogButton})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button:
@@ -96,7 +96,20 @@ public class baseControlActivity extends AppCompatActivity {
             case R.id.login2DialogButton:
                 login2DialogButtonClick();
                 break;
+            case R.id.login3DialogButton:
+                login3DialogButtonClick();
+                break;
         }
+    }
+
+    public void login3DialogButtonClick()
+    {
+        AlertDialog.Builder editDialog = new AlertDialog.Builder(this);
+
+        View view = View.inflate(baseControlActivity.this,R.layout.activity_login, null);
+        editDialog.setView(view);
+        final AlertDialog alertDialog = editDialog.create();
+        alertDialog.show();
     }
 
     public void loginDialogButtonClick()

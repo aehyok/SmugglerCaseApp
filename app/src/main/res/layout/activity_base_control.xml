@@ -220,4 +220,28 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <!--9、Button按钮弹出登录框-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login3Button"
+        android:layout_below="@+id/login2Button">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9、按钮和登录模板弹框："/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ButtonLogin3Dialog"
+                android:id="@+id/login3DialogButton"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
 </RelativeLayout>
