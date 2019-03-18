@@ -174,12 +174,35 @@
         </LinearLayout>
 
     </RelativeLayout>
-    <!--7、Button按钮弹出登录框-->
+    <!--7、Button按钮弹出录入框-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginButton"
+            android:layout_below="@+id/dialogButton">
+            <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7、按钮和弹录入框："/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ButtonLoginDialog"
+                android:id="@+id/loginDialogButton"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!--8、Button按钮弹出登录框-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/loginButton"
-        android:layout_below="@+id/dialogButton">
+        android:id="@+id/login2Button"
+        android:layout_below="@+id/loginButton">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -187,15 +210,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6、按钮和Dialog："/>
+                android:text="8、按钮和登录弹框："/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ButtonDialog"
-
+                android:text="ButtonLogin2Dialog"
+                android:id="@+id/login2DialogButton"
                 />
         </LinearLayout>
 
     </RelativeLayout>
-
 </RelativeLayout>

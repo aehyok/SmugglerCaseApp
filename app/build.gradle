@@ -154,4 +154,8 @@ dependencies {
 
     //自动滚动banner
     implementation 'com.youth.banner:banner:1.4.10'  //最新版本
+
+    //弹出框
+    implementation 'com.github.SiberiaDante:CustomDialog:v1.1.2'
+
 }
